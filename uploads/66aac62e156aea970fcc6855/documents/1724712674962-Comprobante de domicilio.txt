@@ -1,0 +1,6 @@
+http://localhost:8080/api/sessions/githubcallback
+http://localhost:8080/api/sessions/githubcallback
+App ID: 908120
+Client ID: Iv23liwkJwoCQAftU16K
+Cliente secreto
+ba52dd01c3e23dc46d9b8fdc2f1b69f77830c064

@@ -1,0 +1,307 @@
+paths:
+  /api/carts/:
+    get:
+      summary: Obtiene todos los carritos
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: Los carritos fueron obtenidos correctamente de la base de datos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart'
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+    post:
+      summary: Crea un nuevo carrito
+      tags:
+        - Carts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cart'
+      responses:
+        "201":
+          description: El carrito fue creado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        "400":
+          description: Solicitud incorrecta
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+
+  /api/carts/{cid}:
+    get:
+      summary: Obtiene un carrito por ID
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: ID del carrito
+          schema:
+            type: string
+      responses:
+        "200":
+          description: El carrito fue obtenido correctamente de la base de datos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        "404":
+          description: Carrito no encontrado
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+
+    delete:
+      summary: Elimina un carrito existente por ID
+      tags:
+        - Carts
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: ID del carrito
+          schema:
+            type: string
+      responses:
+        "200":
+          description: El carrito fue eliminado correctamente
+        "401":
+          description: No autorizado
+        "404":
+          description: Carrito no encontrado
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+
+  /api/carts/{cid}/product/{pid}:
+    post:
+      summary: Agrega un producto al carrito
+      tags:
+        - Carts
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: ID del carrito
+          schema:
+            type: string
+        - in: path
+          name: pid
+          required: true
+          description: ID del producto
+          schema:
+            type: string
+      responses:
+        "200":
+          description: El producto fue agregado correctamente al carrito
+        "401":
+          description: No autorizado
+        "404":
+          description: Carrito o producto no encontrado
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+
+  /api/carts/{cid}/purchase:
+    post:
+      summary: Crea un ticket de compra para un carrito
+      tags:
+        - Carts
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: ID del carrito
+          schema:
+            type: string
+      responses:
+        "200":
+          description: El ticket de compra fue creado correctamente
+        "401":
+          description: No autorizado
+        "404":
+          description: Carrito no encontrado
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+
+  /api/carts/{cid}/products/{pid}:
+    delete:
+      summary: Elimina un producto del carrito
+      tags:
+        - Carts
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: ID del carrito
+          schema:
+            type: string
+        - in: path
+          name: pid
+          required: true
+          description: ID del producto
+          schema:
+            type: string
+      responses:
+        "200":
+          description: El producto fue eliminado correctamente del carrito
+        "401":
+          description: No autorizado
+        "404":
+          description: Carrito o producto no encontrado
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+
+    put:
+      summary: Actualiza la cantidad de un producto en el carrito
+      tags:
+        - Carts
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: ID del carrito
+          schema:
+            type: string
+        - in: path
+          name: pid
+          required: true
+          description: ID del producto
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quantity:
+                  type: number
+                  description: Nueva cantidad del producto
+      responses:
+        "200":
+          description: La cantidad del producto fue actualizada correctamente en el carrito
+        "401":
+          description: No autorizado
+        "404":
+          description: Carrito o producto no encontrado
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+
+components:
+  schemas:
+    Cart:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: Identificador autogenerado de Mongo       
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              product:
+                $ref: '#/components/schemas/Product'
+              quantity:
+                type: number
+                description: Cantidad del producto en el carrito
+        __v:
+          type: integer
+          description: Versión del documento en MongoDB
+      example:
+        _id: "64b6f1f1f1f1f1f1f1f1f1f1"
+        products:
+          - product:
+              _id: "6645010c72d9769c8cccb1ad"
+              owner: "admin"
+              brands: "Hugo Boss"
+              name: "Bottled Parfum"
+              description: "Hugo Boss Bottled Eau de Toilette. Creado por expertos para reflejar la poderosa personalidad del hombre y la mujer BOSS, presentando una gama de perfumes refinados y contemporáneos diseñados para realzar el aspecto del usuario y complementar su estilo de vida moderno."
+              code: "CO-233"
+              price: 125000
+              status: true
+              stock: 0
+              category: "Hombre"
+              thumbnails: "/img/hb1.png"
+              __v: 0
+            quantity: 2
+        __v: 0
+
+    Product:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: Identificador autogenerado de Mongo
+        owner:
+          type: string
+          description: Dueño del producto
+        brands:
+          type: string
+          description: Marca del producto
+        name:
+          type: string
+          description: Nombre del producto
+        description:
+          type: string
+          description: Descripción del producto
+        code:
+          type: string
+          description: Código del producto
+        price:
+          type: number
+          description: Precio del producto
+        status:
+          type: boolean
+          description: Estado del producto (disponible o no)
+        stock:
+          type: number
+          description: Cantidad disponible en stock
+        category:
+          type: string
+          description: Categoría del producto
+        thumbnails:
+          type: string
+          description: URL de la imagen del producto
+        __v:
+          type: integer
+          description: Versión del documento en MongoDB
+      example:
+        _id: "6645010c72d9769c8cccb1ad"
+        owner: "admin"
+        brands: "Hugo Boss"
+        name: "Bottled Parfum"
+        description: "Hugo Boss Bottled Eau de Toilette. Creado por expertos para reflejar la poderosa personalidad del hombre y la mujer BOSS, presentando una gama de perfumes refinados y contemporáneos diseñados para realzar el aspecto del usuario y complementar su estilo de vida moderno."
+        code: "CO-233"
+        price: 125000
+        status: true
+        stock: 0
+        category: "Hombre"
+        thumbnails: "/img/hb1.png"
+        __v: 0
+
+securitySchemes:
+  bearerAuth:
+    type: http
+    scheme: bearer
+    bearerFormat: JWT

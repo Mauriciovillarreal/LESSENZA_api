@@ -1,0 +1,5 @@
+node_modules/
+cliente/
+.env.production
+.env.development
+README.md

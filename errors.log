@@ -1,0 +1,28 @@
+fatal: Nivel fatal
+error: Nivel error
+fatal: Nivel fatal
+error: Nivel error
+fatal: Nivel fatal
+error: Nivel error
+fatal: Nivel fatal
+error: Nivel error
+fatal: Nivel fatal
+error: Nivel error
+fatal: Nivel fatal
+error: Nivel error
+fatal: Nivel fatal
+error: Nivel error
+fatal: Nivel fatal
+error: Nivel error
+fatal: Nivel fatal
+error: Nivel error
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{ email: 'mauricio.villarreal@outlook.com.ar' }\"","value":{"email":"mauricio.villarreal@outlook.com.ar"},"valueType":"Object"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{ email: 'mauricio.villarreal@outlook.com.ar' }\"","value":{"email":"mauricio.villarreal@outlook.com.ar"},"valueType":"Object"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{ email: 'mauricio.villarreal@outlook.com.ar' }\"","value":{"email":"mauricio.villarreal@outlook.com.ar"},"valueType":"Object"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{ email: '' }\"","value":{"email":""},"valueType":"Object"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{ email: 'gute@live.com' }\"","value":{"email":"gute@live.com"},"valueType":"Object"}

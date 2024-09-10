@@ -1,0 +1,2627 @@
+info: GET en /loggerTest - 20/7/2024, 17:29:04
+fatal: Nivel fatal
+error: Nivel error
+warning: Nivel warning
+info: Nivel info
+info: GET en /favicon.ico - 20/7/2024, 17:29:05
+info: GET en /loggerTest - 20/7/2024, 17:30:25
+fatal: Nivel fatal
+error: Nivel error
+warning: Nivel warning
+info: Nivel info
+info: GET en /loggerTest - 20/7/2024, 17:30:39
+fatal: Nivel fatal
+error: Nivel error
+warning: Nivel warning
+info: Nivel info
+info: Server listening on port 8080
+info: Server listening on port 8000
+info: Server listening on port 8000
+info: Server listening on port 8000
+info: GET en /loggerTest - 20/7/2024, 17:39:38
+fatal: Nivel fatal
+error: Nivel error
+warning: Nivel warning
+info: Nivel info
+info: GET en /loggerTest - 20/7/2024, 17:58:41
+fatal: Nivel fatal
+error: Nivel error
+warning: Nivel warning
+info: Nivel info
+info: Server listening on port 8000
+info: Server listening on port 8000
+info: GET en /loggerTest - 20/7/2024, 18:02:16
+fatal: Nivel fatal
+error: Nivel error
+warning: Nivel warning
+info: Nivel info
+info: BD conectada
+info: Server listening on port 8000
+info: BD conectada
+info: Server listening on port 8080
+info: GET en /loggerTest - 20/7/2024, 18:06:55
+fatal: Nivel fatal
+error: Nivel error
+warning: Nivel warning
+info: Nivel info
+info: POST en /api/sessions/login - 20/7/2024, 18:07:55
+info: BD conectada
+info: Server listening on port 8080
+info: POST en /api/sessions/login - 20/7/2024, 18:10:00
+info: POST en /api/sessions/login - 20/7/2024, 18:11:13
+info: BD conectada
+info: Server listening on port 8080
+info: POST en /api/sessions/login - 20/7/2024, 18:12:48
+info: Contraseña incorrecta
+info: POST en /api/sessions/login - 20/7/2024, 18:14:55
+info: GET en /api/carts/6688ab1a11a3f2eb9b1be626 - 20/7/2024, 18:14:55
+info: GET en /api/products - 20/7/2024, 18:14:58
+info: GET en /api/sessions/current - 20/7/2024, 18:14:58
+info: GET en /api/carts/6688ab1a11a3f2eb9b1be626 - 20/7/2024, 18:14:58
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: POST en /api/carts/6688ab1a11a3f2eb9b1be626/product/6645013e72d9769c8cccb1af - 20/7/2024, 18:16:22
+info: DELETE en /api/carts/6688ab1a11a3f2eb9b1be626 - 20/7/2024, 18:16:26
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8000
+info: BD conectada
+info: Server listening on port 8000
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: GET en /loggerTest - 20/7/2024, 18:36:46
+fatal: Nivel fatal
+error: Nivel error
+warning: Nivel warning
+info: Nivel info
+info: GET en /api/products/6645010c72d9769c8cccb1ad - 20/7/2024, 18:36:55
+info: GET en /api/products - 20/7/2024, 18:37:01
+info: POST en /api/carts/6688ab1a11a3f2eb9b1be626/product/6645018d72d9769c8cccb1b1 - 20/7/2024, 18:37:03
+info: GET en /loggerTest - 20/7/2024, 18:37:13
+fatal: Nivel fatal
+error: Nivel error
+warning: Nivel warning
+info: Nivel info
+info: PUT en /api/carts/6688ab1a11a3f2eb9b1be626/products/6645018d72d9769c8cccb1b1 - 20/7/2024, 18:41:54
+info: PUT en /api/carts/6688ab1a11a3f2eb9b1be626/products/6645018d72d9769c8cccb1b1 - 20/7/2024, 18:41:56
+info: PUT en /api/carts/6688ab1a11a3f2eb9b1be626/products/6645018d72d9769c8cccb1b1 - 20/7/2024, 18:41:57
+info: Received chat message: a {"user":"mauri@live.com.ar"}
+info: Saved message: a {"$__":{"$versionError":null,"activePaths":{"paths":{"email":"require"},"states":{"default":{},"modify":{},"require":{"email":true}}},"backup":{"activePaths":{"default":{"_id":true,"timestamp":true},"modify":{"email":true,"message":true}},"validationError":null},"cachedRequired":{},"inserting":true,"op":null,"saveOptions":null,"savedState":{},"saving":null,"validating":null},"$isNew":false,"_doc":{"__v":0,"_id":"669c2f360df044bed97d74ae","email":"mauri@live.com.ar","message":"a","timestamp":"2024-07-20T21:42:14.625Z"}}
+info: Received chat message: a {"user":"mauri@live.com.ar"}
+info: Saved message: a {"$__":{"$versionError":null,"activePaths":{"paths":{"email":"require"},"states":{"default":{},"modify":{},"require":{"email":true}}},"backup":{"activePaths":{"default":{"_id":true,"timestamp":true},"modify":{"email":true,"message":true}},"validationError":null},"cachedRequired":{},"inserting":true,"op":null,"saveOptions":null,"savedState":{},"saving":null,"validating":null},"$isNew":false,"_doc":{"__v":0,"_id":"669c2f650df044bed97d74b0","email":"mauri@live.com.ar","message":"a","timestamp":"2024-07-20T21:43:01.856Z"}}
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: Saved message: se {"$__":{"$versionError":null,"activePaths":{"paths":{"email":"require"},"states":{"default":{},"modify":{},"require":{"email":true}}},"backup":{"activePaths":{"default":{"_id":true,"timestamp":true},"modify":{"email":true,"message":true}},"validationError":null},"cachedRequired":{},"inserting":true,"op":null,"saveOptions":null,"savedState":{},"saving":null,"validating":null},"$isNew":false,"_doc":{"__v":0,"_id":"669c3009fbd817caa2c6e9b3","email":"mauri@live.com.ar","message":"se","timestamp":"2024-07-20T21:45:45.510Z"}}
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: POST en /api/carts/6688ab1a11a3f2eb9b1be626/purchase - 20/7/2024, 18:46:02
+info: GET en /api/products - 20/7/2024, 18:46:04
+info: DELETE en /api/carts/6688ab1a11a3f2eb9b1be626 - 20/7/2024, 18:46:09
+info: User disconnected
+info: User disconnected
+info: GET en /api/products - 20/7/2024, 18:46:12
+info: New user connected
+info: New user connected
+info: GET en /api/sessions/current - 20/7/2024, 18:46:12
+info: GET en /api/carts/6688ab1a11a3f2eb9b1be626 - 20/7/2024, 18:46:13
+info: POST en /api/carts/6688ab1a11a3f2eb9b1be626/product/6645020e72d9769c8cccb1b5 - 20/7/2024, 18:46:17
+info: POST en /api/carts/6688ab1a11a3f2eb9b1be626/product/66569e0e774d50c5929416a1 - 20/7/2024, 18:46:20
+info: GET en /api/products/6645013e72d9769c8cccb1af - 20/7/2024, 20:40:28
+info: GET en /api/products - 20/7/2024, 20:40:29
+info: GET en /api/sessions/logout - 20/7/2024, 20:40:35
+info: User disconnected
+info: User disconnected
+info: GET en /api/sessions/current - 20/7/2024, 20:40:36
+info: New user connected
+info: New user connected
+info: POST en /api/sessions/login - 20/7/2024, 20:40:39
+info: BD conectada
+info: Server listening on port 8080
+info: GET en /api/products - 20/7/2024, 20:49:44
+info: New user connected
+info: New user connected
+info: GET en /api/sessions/current - 20/7/2024, 20:49:45
+info: GET en /api/carts/668c7310971ec57c83172d69 - 20/7/2024, 20:49:46
+info: GET en /api/products/6645020e72d9769c8cccb1b5 - 20/7/2024, 20:49:50
+info: GET en /api/products - 20/7/2024, 20:49:52
+info: POST en /api/carts/668c7310971ec57c83172d69/product/664501c772d9769c8cccb1b3 - 20/7/2024, 20:49:54
+info: PUT en /api/carts/668c7310971ec57c83172d69/products/664501c772d9769c8cccb1b3 - 20/7/2024, 20:50:29
+info: PUT en /api/carts/668c7310971ec57c83172d69/products/664501c772d9769c8cccb1b3 - 20/7/2024, 20:50:30
+info: DELETE en /api/carts/668c7310971ec57c83172d69 - 20/7/2024, 20:50:31
+info: POST en /api/carts/668c7310971ec57c83172d69/product/6645018d72d9769c8cccb1b1 - 20/7/2024, 20:50:34
+info: GET en /api/products/6645013e72d9769c8cccb1af - 20/7/2024, 20:50:35
+info: GET en /api/products - 20/7/2024, 20:50:37
+info: GET en /api/products/6645013e72d9769c8cccb1af - 20/7/2024, 20:50:39
+info: GET en /api/products - 20/7/2024, 20:50:42
+info: GET en /api/products - 20/7/2024, 20:50:47
+info: GET en /api/products/66569b59774d50c59294165b - 20/7/2024, 20:51:12
+info: GET en /api/products - 20/7/2024, 20:51:36
+info: PUT en /api/carts/668c7310971ec57c83172d69/products/6645018d72d9769c8cccb1b1 - 20/7/2024, 20:52:20
+info: PUT en /api/carts/668c7310971ec57c83172d69/products/6645018d72d9769c8cccb1b1 - 20/7/2024, 20:52:23
+info: POST en /api/carts/668c7310971ec57c83172d69/product/66569b01774d50c592941651 - 20/7/2024, 20:52:26
+info: PUT en /api/carts/668c7310971ec57c83172d69/products/66569b01774d50c592941651 - 20/7/2024, 20:52:28
+info: DELETE en /api/carts/668c7310971ec57c83172d69/products/6645018d72d9769c8cccb1b1 - 20/7/2024, 20:52:29
+info: POST en /api/carts/668c7310971ec57c83172d69/purchase - 20/7/2024, 20:52:33
+info: GET en /api/products - 20/7/2024, 20:52:39
+info: User disconnected
+info: User disconnected
+info: GET en /api/products - 20/7/2024, 20:52:42
+info: New user connected
+info: New user connected
+info: GET en /api/sessions/current - 20/7/2024, 20:52:42
+info: GET en /api/carts/668c7310971ec57c83172d69 - 20/7/2024, 20:52:43
+info: DELETE en /api/carts/668c7310971ec57c83172d69/products/66569b01774d50c592941651 - 20/7/2024, 20:52:46
+info: GET en /api/sessions/logout - 21/7/2024, 23:04:14
+info: User disconnected
+info: User disconnected
+info: GET en /api/sessions/current - 21/7/2024, 23:04:15
+info: New user connected
+info: New user connected
+info: POST en /api/sessions/login - 21/7/2024, 23:04:21
+info: User disconnected
+info: User disconnected
+info: GET en /api/products - 21/7/2024, 23:04:23
+info: New user connected
+info: GET en /api/sessions/current - 21/7/2024, 23:04:24
+info: New user connected
+info: GET en /api/products/6645018d72d9769c8cccb1b1 - 21/7/2024, 23:04:31
+info: GET en /api/products - 21/7/2024, 23:04:33
+info: GET en /api/sessions/logout - 21/7/2024, 23:04:46
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: GET en /api/sessions/current - 21/7/2024, 23:04:47
+info: New user connected
+info: POST en /api/sessions/login - 21/7/2024, 23:04:50
+info: GET en /api/carts/668c7310971ec57c83172d69 - 21/7/2024, 23:04:51
+info: User disconnected
+info: User disconnected
+info: GET en /api/products - 21/7/2024, 23:04:53
+info: New user connected
+info: New user connected
+info: GET en /api/sessions/current - 21/7/2024, 23:04:53
+info: GET en /api/carts/668c7310971ec57c83172d69 - 21/7/2024, 23:04:54
+info: POST en /api/carts/668c7310971ec57c83172d69/product/6645039572d9769c8cccb1f3 - 21/7/2024, 23:05:00
+info: DELETE en /api/carts/668c7310971ec57c83172d69/products/6645039572d9769c8cccb1f3 - 21/7/2024, 23:05:06
+info: POST en /api/carts/668c7310971ec57c83172d69/product/66569b59774d50c59294165b - 21/7/2024, 23:05:14
+info: DELETE en /api/carts/668c7310971ec57c83172d69 - 21/7/2024, 23:05:19
+info: GET en /api/products/6645013e72d9769c8cccb1af - 21/7/2024, 23:05:22
+info: User disconnected
+info: User disconnected
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8000
+info: GET en /api/products - 22/7/2024, 19:26:13
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: BD conectada
+info: Server listening on port 8080
+info: El usuario ya existe
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: El usuario ya existe
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: El usuario ya existe
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: Contraseña incorrecta
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: Contraseña incorrecta
+info: Contraseña incorrecta
+info: Contraseña incorrecta
+info: Contraseña incorrecta
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{ email: 'mauricio.villarreal@outlook.com.ar' }\"","value":{"email":"mauricio.villarreal@outlook.com.ar"},"valueType":"Object"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{ email: 'mauricio.villarreal@outlook.com.ar' }\"","value":{"email":"mauricio.villarreal@outlook.com.ar"},"valueType":"Object"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{ email: 'mauricio.villarreal@outlook.com.ar' }\"","value":{"email":"mauricio.villarreal@outlook.com.ar"},"valueType":"Object"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{ email: '' }\"","value":{"email":""},"valueType":"Object"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{ email: 'gute@live.com' }\"","value":{"email":"gute@live.com"},"valueType":"Object"}
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: Contraseña incorrecta
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: Contraseña incorrecta
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: User disconnected
+info: Contraseña incorrecta
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: Contraseña incorrecta
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: Contraseña incorrecta
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: El usuario ya existe
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: El usuario ya existe
+info: BD conectada
+info: Server listening on port 8080
+info: El usuario ya existe
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: El usuario ya existe
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: Usuario no encontrado
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: BD conectada
+info: Server listening on port 8080
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected
+info: User disconnected
+info: User disconnected
+info: New user connected
+info: New user connected

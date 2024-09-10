@@ -1,0 +1,185 @@
+paths:
+  /api/products/:
+    get:
+      summary: Obtiene todos los productos
+      tags:
+        - Products
+      responses:
+        "200":
+          description: Los productos fueron obtenidos correctamente de la base de datos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+    post:
+      summary: Crea un nuevo producto
+      tags:
+        - Products
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        "201":
+          description: El producto fue creado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        "400":
+          description: Solicitud incorrecta
+        "401":
+          description: No autorizado
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+
+  /api/products/{pid}:
+    get:
+      summary: Obtiene un producto por ID
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          description: ID del producto
+          schema:
+            type: string
+      responses:
+        "200":
+          description: El producto fue obtenido correctamente de la base de datos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        "404":
+          description: Producto no encontrado
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+
+    put:
+      summary: Actualiza un producto existente por ID
+      tags:
+        - Products
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          description: ID del producto
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        "200":
+          description: El producto fue actualizado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        "400":
+          description: Solicitud incorrecta
+        "401":
+          description: No autorizado
+        "404":
+          description: Producto no encontrado
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+
+    delete:
+      summary: Elimina un producto existente por ID
+      tags:
+        - Products
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          description: ID del producto
+          schema:
+            type: string
+      responses:
+        "200":
+          description: El producto fue eliminado correctamente
+        "401":
+          description: No autorizado
+        "404":
+          description: Producto no encontrado
+        "500":
+          description: Error interno del servidor, usualmente generado por una query defectuosa o un fallo de la conexión con la base de datos
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: Identificador autogenerado de Mongo
+        owner:
+          type: string
+          description: Dueño del producto
+        brands:
+          type: string
+          description: Marca del producto
+        name:
+          type: string
+          description: Nombre del producto
+        description:
+          type: string
+          description: Descripción del producto
+        code:
+          type: string
+          description: Código del producto
+        price:
+          type: number
+          description: Precio del producto
+        status:
+          type: boolean
+          description: Estado del producto (disponible o no)
+        stock:
+          type: number
+          description: Cantidad disponible en stock
+        category:
+          type: string
+          description: Categoría del producto
+        thumbnails:
+          type: string
+          description: URL de la imagen del producto
+        __v:
+          type: integer
+          description: Versión del documento en MongoDB
+      example:
+        _id: "6645010c72d9769c8cccb1ad"
+        owner: "admin"
+        brands: "Hugo Boss"
+        name: "Bottled Parfum"
+        description: "Hugo Boss Bottled Eau de Toilette. Creado por expertos para reflejar la poderosa personalidad del hombre y la mujer BOSS, presentando una gama de perfumes refinados y contemporáneos diseñados para realzar el aspecto del usuario y complementar su estilo de vida moderno."
+        code: "CO-233"
+        price: 125000
+        status: true
+        stock: 0
+        category: "Hombre"
+        thumbnails: "/img/hb1.png"
+        __v: 0
+
+securitySchemes:
+  bearerAuth:
+    type: http
+    scheme: bearer
+    bearerFormat: JWT
