@@ -23,7 +23,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser(cookie_parser_secret))
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://lessenza.vercel.app/',
     credentials: true
 }))
 
