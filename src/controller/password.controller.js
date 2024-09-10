@@ -22,7 +22,7 @@ class PasswordController {
 
             await this.userService.update(user._id, { resetPasswordToken: token, resetPasswordExpires: expires })
 
-            const resetUrl = `https://lessenza.vercel.app/reset-password/${token}`
+            const resetUrl = `https://lessenza.vercel.appreset-password/${token}`
 
             const html = `
                 <div style="text-align: center">
@@ -84,7 +84,7 @@ class PasswordController {
 
             await this.userService.update(user._id, { resetPasswordToken: token, resetPasswordExpires: expires })
 
-            const resetUrl = `https://lessenza.vercel.app/reset-password/${token}`
+            const resetUrl = `https://lessenza.vercel.appreset-password/${token}`
 
             const html = `<p>Click the following link to reset your password: <a href="${resetUrl}">${resetUrl}</a></p>`
 
