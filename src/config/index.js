@@ -16,7 +16,6 @@ exports.objetConfig = {
     adminPassword: process.env.ADMIN_PASSWORD,
     gmail_pass: process.env.GMAIL_PASS,
     gmail_user: process.env.GMAIL_USER
-
 }
 
 exports.connectDB = () => {
