@@ -20,7 +20,7 @@ const initSession = (app, mongoUrl) => {
     resave: false,
     saveUninitialized: false,
     cookie: { 
-      secure: false,
+      secure: true,
       sameSite: 'None' // Esto permite que las cookies se envíen en entornos cross-origin
      } 
   }))
