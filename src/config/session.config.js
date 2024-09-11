@@ -20,7 +20,7 @@ const initSession = (app, mongoUrl) => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: true, // or false, depending on your setup
+      secure: false, // or false, depending on your setup
       sameSite: 'none',
       httpOnly: true
     }
