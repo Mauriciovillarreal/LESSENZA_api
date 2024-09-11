@@ -14,13 +14,16 @@ const initSession = (app, mongoUrl) => {
         useNewUrlParser: true,
         useUnifiedTopology: true
       },
-      ttl: 60 * 60 * 1000 * 24
+      ttl: 60 * 60 * 1000 * 24  // 24 horas
     }),
     secret: session_secret,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true, sameSite: 'None' }
-  }))
+    cookie: { 
+      secure: isProduction,  // Solo usar secure en producción
+      sameSite: isProduction ? 'None' : 'Lax',  // SameSite=Lax para desarrollo, None para producción
+    }
+  }));
 
   initPassport()
   app.use(passport.initialize())
