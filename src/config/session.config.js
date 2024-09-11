@@ -14,26 +14,21 @@ const initSession = (app, mongoUrl) => {
         useNewUrlParser: true,
         useUnifiedTopology: true
       },
-      ttl: 60 * 60 * 1000 * 24 // 24 horas
+      ttl: 60 * 60 * 1000 * 24
     }),
     secret: session_secret,
-    resave: true,
-    saveUninitialized: true,
-    cookie: { 
-      secure: process.env.NODE_ENV === 'production', // Solo usar secure en producción
-      domain: process.env.NODE_ENV === 'production' ? 'lessenza.onrender.com' : undefined, // Definir dominio solo en producción
-      httpOnly: true, // Para mejorar la seguridad
-      maxAge: 60 * 60 * 1000 * 24 // 24 horas para la duración de la cookie
-    }
-  }));
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false } 
+  }))
 
-  initPassport();
-  app.use(passport.initialize());
-  app.use(passport.session());
+  initPassport()
+  app.use(passport.initialize())
+  app.use(passport.session())
 
   app.use((req, res, next) => {
-    next();
-  });
-};
+    next()
+  })
+}
 
-module.exports = { initSession };
+module.exports = { initSession }
