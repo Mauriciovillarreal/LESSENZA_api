@@ -19,13 +19,9 @@ const initSession = (app, mongoUrl) => {
     secret: session_secret,
     resave: true,
     saveUninitialized: true,
-    cookie: {
-      secure: false, 
-      httpOnly: true,
-      sameSite: 'None'  
-    }
-  }));
-  
+    cookie: { secure: false } 
+  }))
+
   initPassport()
   app.use(passport.initialize())
   app.use(passport.session())
