@@ -22,7 +22,7 @@ const initSession = (app, mongoUrl) => {
     cookie: {
       secure: false,  // Si estás en producción, asegúrate de poner esto en true y de usar HTTPS
       httpOnly: true,
-      sameSite: 'Lax'  // Prueba con 'Strict' o 'None' si es necesario
+      sameSite: 'Strict'  // Prueba con 'Strict' o 'None' si es necesario
     }
   }));
   
