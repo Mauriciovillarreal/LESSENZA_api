@@ -32,13 +32,17 @@ class SessionController {
   }
 
   getCurrentUser = async (req, res) => {
+    console.log('Session data:', req.session);  // Depura los datos de la sesión
     if (req.isAuthenticated()) {
-      const userDto = new UserCurrentDto(req.user)
-      res.json({ user: userDto })
+      console.log('User is authenticated:', req.user);
+      const userDto = new UserCurrentDto(req.user);
+      res.json({ user: userDto });
     } else {
-      res.status(401).json({ error: 'Not authenticated' })
+      console.log('User not authenticated');
+      res.status(401).json({ error: 'Not authenticated' });
     }
-  }
+  };
+  
 
   login = (req, res, next) => {
     passport.authenticate('login', async (error, user, info) => {

@@ -25,7 +25,6 @@ app.use(cookieParser(cookie_parser_secret))
 app.use(cors({
   origin: 'https://lessenza.onrender.com',
   credentials: true,  // Este es importante para permitir el envío de cookies
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Asegúrate de incluir los métodos permitidos
 }));
 
 initSession(app, mongo_url)
