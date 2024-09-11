@@ -8,7 +8,7 @@ let io
 function initSocket(httpServer) {
     io = new Server(httpServer, {
         cors: {
-            origin: ['http://localhost:5173', 'https://lessenza.vercel.app'],
+            origin: ['http://localhost:5173', 'https://lessenza.onrender.com'],
             methods: ["GET", "POST"],
             credentials: true  // Esto es necesario si estás utilizando cookies o autenticación basada en sesiones
         }
