@@ -7,6 +7,8 @@ const { objetConfig } = require('../config/index.js')
 const { session_secret } = objetConfig
 
 const initSession = (app, mongoUrl) => {
+  console.log('Initializing session with MongoDB URL:', mongoUrl);  // Verifica la URL de MongoDB
+
   app.use(session({
     store: MongoStore.create({
       mongoUrl,
@@ -19,16 +21,30 @@ const initSession = (app, mongoUrl) => {
     secret: session_secret,
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false } 
-  }))
+    cookie: {
+      secure: false,  // Cambia esto a 'true' en producción con HTTPS
+      sameSite: 'None',  // Esto es importante para Chrome
+      httpOnly: true
+    }
+  }));
 
-  initPassport()
-  app.use(passport.initialize())
-  app.use(passport.session())
+  console.log('Session middleware initialized with cookie settings:', {
+    secure: false,
+    sameSite: 'None',
+    httpOnly: true
+  });
+  
+  initPassport();
+  console.log('Passport initialized');
+
+  app.use(passport.initialize());
+  app.use(passport.session());
 
   app.use((req, res, next) => {
-    next()
-  })
-}
+    console.log('Session Data:', req.session);  // Verifica los datos de la sesión en cada solicitud
+    next();
+  });
+};
+
 
 module.exports = { initSession }
