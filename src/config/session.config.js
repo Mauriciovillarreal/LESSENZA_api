@@ -18,8 +18,8 @@ const initSession = (app, mongoUrl) => {
     }),
     secret: session_secret,
     resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false } 
+    saveUninitialized: true,
+    cookie: { secure: true, sameSite: 'None' }
   }))
 
   initPassport()

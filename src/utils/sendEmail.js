@@ -3,9 +3,6 @@ const { objetConfig } = require("../config");
 
 const { gmail_pass, gmail_user } = objetConfig;
 
-// Imprimir las credenciales para verificar si están siendo leídas correctamente
-console.log('Usuario:', gmail_user);
-console.log('Contraseña:', gmail_pass);
 
 const transport = createTransport({
     service: "gmail",
@@ -14,11 +11,8 @@ const transport = createTransport({
     auth: {
         user: gmail_user,
         pass: gmail_pass
-    },
-    logger: true,  // Habilita logs detallados
-    debug: true    // Muestra mensajes de depuración
+    }
 });
-
 
 exports.sendEmail = async ({ userMail, subject, html }) => {
     try {
