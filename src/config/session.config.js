@@ -7,6 +7,7 @@ const { objetConfig } = require('../config/index.js')
 const { session_secret } = objetConfig
 
 const initSession = (app, mongoUrl) => {
+  const isProduction = process.env.NODE_ENV === 'production';
   app.use(session({
     store: MongoStore.create({
       mongoUrl,
