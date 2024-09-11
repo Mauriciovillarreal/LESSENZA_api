@@ -19,6 +19,10 @@ const initSession = (app, mongoUrl) => {
     secret: session_secret,
     resave: false,
     saveUninitialized: false,
+    cookie: {
+      sameSite: 'None',  // Para permitir el uso de cookies cross-site
+    }
+    
   }))
 
   initPassport()
