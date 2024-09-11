@@ -1,5 +1,5 @@
-http://localhost:8080/api/sessions/githubcallback
-http://localhost:8080/api/sessions/githubcallback
+https://lessenza.onrender.com:8080/api/sessions/githubcallback
+https://lessenza.onrender.com:8080/api/sessions/githubcallback
 App ID: 908120
 Client ID: Iv23liwkJwoCQAftU16K
 Cliente secreto

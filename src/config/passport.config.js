@@ -93,7 +93,7 @@ const initPassport = () => {
         {
             clientID: 'Iv23liwkJwoCQAftU16K',
             clientSecret: 'ba52dd01c3e23dc46d9b8fdc2f1b69f77830c064',
-            callbackURL: 'http://localhost:8080/api/sessions/githubcallback'
+            callbackURL: 'https://lessenza.onrender.com:8080/api/sessions/githubcallback'
         },
         async (accessToken, refreshToken, profile, done) => {
             try {

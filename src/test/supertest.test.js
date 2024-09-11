@@ -2,7 +2,7 @@ const chai = require('chai')
 const supertest = require('supertest')
 
 const expect = chai.expect
-const requester = supertest('http://localhost:8080')
+const requester = supertest('https://lessenza.onrender.com:8080')
 
 describe('Test avanzado de Products', () => {
 
