@@ -10,20 +10,18 @@ const initSession = (app, mongoUrl) => {
   app.use(session({
     store: MongoStore.create({
       mongoUrl,
-      mongoOptions: {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      },
+      mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true },
       ttl: 60 * 60 * 1000 * 24
     }),
     secret: session_secret,
     resave: false,
     saveUninitialized: false,
     cookie: {
-      sameSite: 'None',  // Para permitir el uso de cookies cross-site
+      secure: process.env.NODE_ENV === 'production',  // Necesario si usas HTTPS
+      sameSite: 'None'  // Permite cookies en solicitudes cross-site
     }
-    
-  }))
+  }));
+  
 
   initPassport()
   app.use(passport.initialize())
