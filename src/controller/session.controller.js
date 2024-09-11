@@ -26,7 +26,7 @@ class SessionController {
 
         console.log('Sesión iniciada correctamente:', user)
         req.session.user = user
-        return res.redirect('http://localhost:5173')
+        return res.redirect('https://lessenza.onrender.com')
       })
     })(req, res, next)
   }

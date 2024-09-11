@@ -8,7 +8,7 @@ let io
 function initSocket(httpServer) {
     io = new Server(httpServer, {
         cors: {
-            origin: 'http://localhost:5173',
+            origin: 'https://lessenza.onrender.com',
             methods: ['GET', 'POST'],
             credentials: true
         }
