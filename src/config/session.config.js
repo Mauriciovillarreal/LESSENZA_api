@@ -19,7 +19,10 @@ const initSession = (app, mongoUrl) => {
     secret: session_secret,
     resave: true,
     saveUninitialized: true,
-    cookie: { secure: false } 
+    cookie: { 
+      secure: false,
+      domain: 'https://lessenza.onrender.com',
+    } 
   }))
 
   initPassport()
