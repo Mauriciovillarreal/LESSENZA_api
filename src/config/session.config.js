@@ -21,7 +21,8 @@ const initSession = (app, mongoUrl) => {
     saveUninitialized: true,
     cookie: { 
       secure: false,
-      domain: 'https://lessenza.onrender.com',
+      domain: 'lessenza.onrender.com',
+      httpOnly: true
     } 
   }))
 
