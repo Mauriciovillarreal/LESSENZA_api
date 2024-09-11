@@ -43,19 +43,24 @@ class SessionController {
   login = (req, res, next) => {
     passport.authenticate('login', async (error, user, info) => {
       if (error) {
-        return res.status(500).json({ error: 'Internal Server Error' })
+        console.log('Error during login:', error);
+        return res.status(500).json({ error: 'Internal Server Error' });
       }
       if (!user) {
-        return res.status(401).json({ error: 'Email or password incorrect' })
+        console.log('Login failed: incorrect email or password');
+        return res.status(401).json({ error: 'Email or password incorrect' });
       }
       req.logIn(user, async (error) => {
         if (error) {
-          return res.status(500).json({ error: 'Internal Server Error' })
+          console.log('Error logging in user:', error);
+          return res.status(500).json({ error: 'Internal Server Error' });
         }
-        // Actualizar la última conexión
-        user.last_connection = new Date()
-        await user.save()
-
+  
+        console.log('User logged in successfully:', user);
+        user.last_connection = new Date();
+        await user.save();
+        
+        console.log('Session initialized with user:', req.session.user);
         return res.status(200).json({
           message: 'Login successful',
           first_name: user.first_name,
@@ -63,10 +68,11 @@ class SessionController {
           role: user.role,
           last_name: user.last_name,
           cart: user.cart
-        })
-      })
-    })(req, res, next)
-  }
+        });
+      });
+    })(req, res, next);
+  };
+  
 
   register = (req, res, next) => {
     passport.authenticate('register', (error, user, info) => {
@@ -86,18 +92,20 @@ class SessionController {
   }
 
   logout = (req, res) => {
-    const userId = req.user._id // Obtener el ID del usuario para actualizar la última conexión
+    const userId = req.user._id;
+    console.log('Logging out user:', userId);
     req.session.destroy(async (error) => {
       if (error) {
-        return res.status(500).json({ status: 'error', error: error.message })
+        console.log('Error during logout:', error);
+        return res.status(500).json({ status: 'error', error: error.message });
       } else {
-        // Actualizar la última conexión en logout
-        await usersModel.findByIdAndUpdate(userId, { last_connection: new Date() })
-
-        return res.status(200).json({ status: 'success', message: 'Logout successful' })
+        console.log('Session destroyed for user:', userId);
+        await usersModel.findByIdAndUpdate(userId, { last_connection: new Date() });
+        return res.status(200).json({ status: 'success', message: 'Logout successful' });
       }
-    })
-  }
+    });
+  };
+  
 }
 
 module.exports = new SessionController()
