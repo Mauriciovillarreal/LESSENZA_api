@@ -22,10 +22,11 @@ const initSession = (app, mongoUrl) => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: false,  // Cambia esto a 'true' en producción con HTTPS
-      sameSite: 'None',  // Esto es importante para Chrome
+      secure: false,  // Mantén esto en false si no tienes HTTPS en desarrollo
+      sameSite: 'Lax',  // Alternativa para desarrollo
       httpOnly: true
     }
+    
   }));
 
   console.log('Session middleware initialized with cookie settings:', {
