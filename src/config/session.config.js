@@ -11,26 +11,21 @@ const initSession = (app, mongoUrl) => {
     store: MongoStore.create({
       mongoUrl,
       mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true },
-      ttl: 60 * 60 * 1000 * 24  // 1 día
+      ttl: 60 * 60 * 1000 * 24
     }),
     secret: session_secret,
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: process.env.NODE_ENV === 'production',  // Asegúrate de estar usando HTTPS si está en producción
-      sameSite: 'None'  // Para permitir cookies en solicitudes cross-site
+      secure: process.env.NODE_ENV === 'production',  // Activa solo en producción
+      sameSite: 'None',  // Permite solicitudes cross-site
+      httpOnly: true,  // Protege las cookies en el cliente
     }
   }));
-  
-  
 
-  initPassport()
-  app.use(passport.initialize())
-  app.use(passport.session())
-
-  app.use((req, res, next) => {
-    next()
-  })
-}
+  initPassport();
+  app.use(passport.initialize());
+  app.use(passport.session());
+};
 
 module.exports = { initSession }

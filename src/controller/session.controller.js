@@ -30,9 +30,8 @@ class SessionController {
       })
     })(req, res, next)
   }
-
   getCurrentUser = async (req, res) => {
-    console.log('Session data:', req.session);  // Depura los datos de la sesión
+    console.log('Session data:', req.session);  // Verifica los datos de la sesión
     if (req.isAuthenticated()) {
       console.log('User is authenticated:', req.user);
       const userDto = new UserCurrentDto(req.user);
@@ -42,6 +41,7 @@ class SessionController {
       res.status(401).json({ error: 'Not authenticated' });
     }
   };
+  
   
 
   login = (req, res, next) => {
@@ -61,6 +61,11 @@ class SessionController {
         }
   
         console.log('User logged in successfully:', user);
+
+        req.session.user = user;  
+        console.log('Session initialized with user:', req.session.user);
+
+
         user.last_connection = new Date();
         await user.save();
         

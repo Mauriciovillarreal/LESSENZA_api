@@ -6,7 +6,6 @@ const { initSocket } = require('./config/socket.config.js')
 const errorHandler = require('./middlewares/error/index.js')
 const { addLogger, productionLogger } = require('./utils/logger.js')
 const routerApp = require('./routes/index.js')
-const passport = require('passport')
 const { connectDB, objetConfig } = require('./config/index.js')
 
 const { port, mongo_url, cookie_parser_secret } = objetConfig
@@ -28,9 +27,6 @@ app.use(cors({
 }));
 
 initSession(app, mongo_url)
-
-app.use(passport.initialize())
-app.use(passport.session())
 
 app.use(addLogger)
 
