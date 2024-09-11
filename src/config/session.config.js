@@ -17,12 +17,12 @@ const initSession = (app, mongoUrl) => {
       ttl: 60 * 60 * 1000 * 24
     }),
     secret: session_secret,
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     cookie: {
-      secure: true,  // Si estás en producción, asegúrate de poner esto en true y de usar HTTPS
+      secure: false, 
       httpOnly: true,
-      sameSite: 'None'  // Prueba con 'Strict' o 'None' si es necesario
+      sameSite: 'None'  
     }
   }));
   
