@@ -7,7 +7,6 @@ const { objetConfig } = require('../config/index.js')
 const { session_secret } = objetConfig
 
 const initSession = (app, mongoUrl) => {
-  const isProduction = process.env.NODE_ENV === 'production';
   app.use(session({
     store: MongoStore.create({
       mongoUrl,
@@ -15,16 +14,13 @@ const initSession = (app, mongoUrl) => {
         useNewUrlParser: true,
         useUnifiedTopology: true
       },
-      ttl: 60 * 60 * 1000 * 24  // 24 horas
+      ttl: 60 * 60 * 1000 * 24
     }),
     secret: session_secret,
     resave: false,
-    saveUninitialized: true,
-    cookie: { 
-      secure: isProduction,  // Solo usar secure en producción
-      sameSite: isProduction ? 'None' : 'Lax',  // SameSite=Lax para desarrollo, None para producción
-    }
-  }));
+    saveUninitialized: false,
+    cookie: { secure: false } 
+  }))
 
   initPassport()
   app.use(passport.initialize())
