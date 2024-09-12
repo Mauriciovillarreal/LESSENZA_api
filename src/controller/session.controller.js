@@ -1,6 +1,7 @@
 const passport = require('passport')
 const UserCurrentDto = require('../dto/userCurrent.dto')
 const { usersModel } = require('../dao/MONGO/models/users.model')
+const { productionLogger } = require('../utils/logger')
 
 class SessionController {
   githubAuth = passport.authenticate('github', { scope: 'user:email' })

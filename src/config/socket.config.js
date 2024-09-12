@@ -1,7 +1,6 @@
 const { Server } = require('socket.io')
 const { productsModel } = require('../dao/MONGO/models/products.model.js')
 const { chatsModel } = require('../dao/MONGO/models/chat.model.js')
-const { productionLogger } = require('../utils/logger.js')
 
 let io
 

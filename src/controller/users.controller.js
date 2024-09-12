@@ -5,7 +5,8 @@ const { EErrors } = require('../service/errors/enums.js')
 const { generateUserErrorInfo } = require('../service/errors/info.js')
 const { sendEmail } = require('../utils/sendEmail.js')
 const { usersModel } = require('../dao/MONGO/models/users.model.js')
-
+const { productionLogger } = require('../utils/logger.js')
+productionLogger
 class UserController {
     constructor() {
         this.usersService = userService
@@ -196,7 +197,7 @@ class UserController {
                 payload: result,
             })
         } catch (error) {
-            productionLogger.info('Error al subir los archivos:', error)
+            console.error('Error al subir los archivos:', error)
             return res.status(500).json({ error: 'Ocurrió un error en el servidor.' })
         }
     }

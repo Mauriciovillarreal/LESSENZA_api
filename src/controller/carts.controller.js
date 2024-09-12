@@ -3,6 +3,7 @@ const { cartService, productService, ticketService } = require('../service/index
 const { CustomError } = require('../service/errors/CustomError.js')
 const { EErrors } = require('../service/errors/enums.js')
 const { generateCartErrorInfo } = require('../service/errors/info.js')
+const { productionLogger } = require('../utils/logger.js')
 
 class CartController {
     constructor() {
@@ -14,7 +15,7 @@ class CartController {
             const carts = await cartService.getCarts()
             res.send(carts)
         } catch (error) {
-            productionLogger.info('An error occurred while retrieving the carts:', error)
+            console.error('An error occurred while retrieving the carts:', error)
             res.status(500).json({ error: 'Internal server error' })
         }
     }
@@ -255,7 +256,7 @@ class CartController {
                 return res.status(400).json({ error: 'No products were processed' })
             }
         } catch (error) {
-            productionLogger.info('An error occurred while creating the ticket:', error)
+            console.error('An error occurred while creating the ticket:', error)
             res.status(500).json({ error: 'Internal server error' })
         }
     }

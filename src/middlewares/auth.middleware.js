@@ -1,3 +1,6 @@
+const { productionLogger } = require("../utils/logger");
+
+productionLogger
 const authUser = (req, res, next) => {
   if (req.isAuthenticated()) {
     const user = req.user
