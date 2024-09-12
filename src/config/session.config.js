@@ -21,11 +21,13 @@ const initSession = (app, mongoUrl) => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: process.env.NODE_ENV === 'production',  // Debe ser true si estás en HTTPS
-      sameSite: 'None',  // Necesario para entornos cross-origin
-      httpOnly: true  // Recomendado para mayor seguridad
+      secure: false,  // Mantén esto en false si no tienes HTTPS en desarrollo
+      sameSite: 'None',  // Alternativa para desarrollo
+      httpOnly: false
     }
+    
   }));
+
 
   initPassport();
 
