@@ -29,7 +29,7 @@
 //             await fs.promises.writeFile(this.path, JSON.stringify(productos, null, '\t'), 'utf-8')
 //             return producto
 //         } catch (error) {
-//             console.log(error)
+//             productionLogger.info(error)
 //         }
 //     }
 
@@ -39,12 +39,12 @@
 //             const searchedProduct = await productos.find((products) =>
 //                 products.id === id)
 //             if (!searchedProduct) {
-//                 console.log("No encontrado")
+//                 productionLogger.info("No encontrado")
 //             } else {
-//                 console.log(searchedProduct)
+//                 productionLogger.info(searchedProduct)
 //             }
 //         } catch (error) {
-//             console.log(error)
+//             productionLogger.info(error)
 //         }
 //     }
 
@@ -54,16 +54,16 @@
 //             const searchedProduct = await productos.find((produc) =>
 //                 produc.id === id)
 //             if (!searchedProduct) {
-//                 console.log("No encontrado")
+//                 productionLogger.info("No encontrado")
 //             } else {
 //                 searchedProduct.title = 'se cambio el title'
 //                 searchedProduct.description = 'se cambio la description'
 //                 searchedProduct.price = 500
-//                 console.log(searchedProduct, '\nSe cambio exitosamente')
+//                 productionLogger.info(searchedProduct, '\nSe cambio exitosamente')
 //                 await fs.promises.writeFile(this.path, JSON.stringify(productos, null, '\t'), 'utf-8')
 //             }
 //         } catch (error) {
-//             console.log(error)
+//             productionLogger.info(error)
 //         }
 //     }
 
@@ -75,12 +75,12 @@
 //                 productos.splice(value, 1)
 //                 await fs.promises.writeFile(this.path, JSON.stringify(productos, null, '\t'), 'utf-8')
 //             } else {
-//                 console.log(`No se encontró ningún producto con id ${id}.`)
+//                 productionLogger.info(`No se encontró ningún producto con id ${id}.`)
 //             }
-//             console.log(productos)
+//             productionLogger.info(productos)
 
 //         } catch (error) {
-//             console.log(error)
+//             productionLogger.info(error)
 //         }
 //     }
 // }

@@ -7,7 +7,6 @@ const { objetConfig } = require('../config/index.js')
 const { session_secret } = objetConfig
 
 const initSession = (app, mongoUrl) => {
-  console.log('Initializing session with MongoDB URL:', mongoUrl);  // Verifica la URL de MongoDB
 
   app.use(session({
     store: MongoStore.create({
@@ -36,13 +35,11 @@ const initSession = (app, mongoUrl) => {
   });
   
   initPassport();
-  console.log('Passport initialized');
 
   app.use(passport.initialize());
   app.use(passport.session());
 
   app.use((req, res, next) => {
-    console.log('Session Data:', req.session);  // Verifica los datos de la sesión en cada solicitud
     next();
   });
 };

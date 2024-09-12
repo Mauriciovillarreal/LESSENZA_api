@@ -14,7 +14,7 @@ class CartController {
             const carts = await cartService.getCarts()
             res.send(carts)
         } catch (error) {
-            console.error('An error occurred while retrieving the carts:', error)
+            productionLogger.info('An error occurred while retrieving the carts:', error)
             res.status(500).json({ error: 'Internal server error' })
         }
     }
@@ -211,7 +211,6 @@ class CartController {
                 }
 
                 const product = await productService.getProduct(item.product)
-                console.log(`Checking product ${item.product}:`, product)
 
                 if (!product) {
                     console.warn(`Product with ID ${item.product} not found`)
@@ -220,7 +219,7 @@ class CartController {
                 }
 
                 if (product.stock >= item.quantity) {
-                    console.log(`Product ${product._id} has sufficient stock:`, product.stock)
+                    productionLogger.info(`Product ${product._id} has sufficient stock:`, product.stock)
                     product.stock -= item.quantity
                     await productService.updateProduct(product._id, product)
                     processedProducts.push({
@@ -230,7 +229,7 @@ class CartController {
                         price: product.price
                     })
                 } else {
-                    console.log(`Insufficient stock for product ${product._id}:`, product.stock)
+                    productionLogger.info(`Insufficient stock for product ${product._id}:`, product.stock)
                     unprocessedProducts.push({ productId: item.product, reason: 'Insufficient stock' })
                 }
             }
@@ -239,7 +238,7 @@ class CartController {
                 await cartService.updateCart(cid, {
                     products: cart.products.filter(item => unprocessedProducts.some(up => up.productId === item.product))
                 })
-                console.log('Updated cart products:', cart.products)
+                productionLogger.info('Updated cart products:', cart.products)
 
                 const ticket = await ticketService.createTicket({
                     purchaser: userId,
@@ -256,7 +255,7 @@ class CartController {
                 return res.status(400).json({ error: 'No products were processed' })
             }
         } catch (error) {
-            console.error('An error occurred while creating the ticket:', error)
+            productionLogger.info('An error occurred while creating the ticket:', error)
             res.status(500).json({ error: 'Internal server error' })
         }
     }

@@ -15,7 +15,7 @@ function initSocket(httpServer) {
     })
 
     io.on('connection', async (socket) => {
-        productionLogger.info('New user connected')
+        console.log('New user connected')
     
         try {
             const products = await productsModel.find({})
@@ -76,7 +76,7 @@ function initSocket(httpServer) {
         })
     
         socket.on('disconnect', () => {
-            productionLogger.info('User disconnected')
+            console.log('User disconnected')
         })
     })
     

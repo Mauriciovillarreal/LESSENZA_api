@@ -97,7 +97,7 @@ class UserController {
                 await usersModel.findByIdAndDelete(user._id);
                 deletedUsers.push(user.email);
             
-                console.log(`Procesando el usuario: ${user.fullname} con email: ${user.email}`);
+                productionLogger.info(`Procesando el usuario: ${user.fullname} con email: ${user.email}`);
             
                 // Validar que el correo exista y tenga un formato válido antes de intentar enviarlo
                 if (user.email && /\S+@\S+\.\S+/.test(user.email)) {
@@ -106,9 +106,9 @@ class UserController {
                         subject: 'Cuenta eliminada por inactividad',
                         html: `<p>Hola ${user.fullname}, tu cuenta ha sido eliminada debido a la inactividad. Si deseas más información, contacta con soporte.</p>`,
                     });
-                    console.log(`Correo enviado a: ${user.email}`);
+                    productionLogger.info(`Correo enviado a: ${user.email}`);
                 } else {
-                    console.log(`Usuario con ID ${user._id} no tiene un correo electrónico válido.`);
+                    productionLogger.info(`Usuario con ID ${user._id} no tiene un correo electrónico válido.`);
                 }
                 
             }
@@ -196,7 +196,7 @@ class UserController {
                 payload: result,
             })
         } catch (error) {
-            console.error('Error al subir los archivos:', error)
+            productionLogger.info('Error al subir los archivos:', error)
             return res.status(500).json({ error: 'Ocurrió un error en el servidor.' })
         }
     }

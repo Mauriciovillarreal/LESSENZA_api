@@ -12,7 +12,7 @@ class SessionController {
         return res.status(500).json({ message: 'Authentication error' })
       }
       if (!user) {
-        console.log('No se encontró usuario')
+        productionLogger.info('No se encontró usuario')
         return res.redirect('/login')
       }
       req.logIn(user, async (err) => {
@@ -24,20 +24,19 @@ class SessionController {
         user.last_connection = new Date()
         await user.save()
 
-        console.log('Sesión iniciada correctamente:', user)
         req.session.user = user
         return res.redirect('https://lessenza.onrender.com')
       })
     })(req, res, next)
   }
   getCurrentUser = async (req, res) => {
-    console.log('Session data:', req.session);  // Verifica los datos de la sesión
+    productionLogger.info('Session data:', req.session);  // Verifica los datos de la sesión
     if (req.isAuthenticated()) {
-      console.log('User is authenticated:', req.user);
+      productionLogger.info('User is authenticated:', req.user);
       const userDto = new UserCurrentDto(req.user);
       res.json({ user: userDto });
     } else {
-      console.log('User not authenticated');
+      productionLogger.info('User not authenticated');
       res.status(401).json({ error: 'Not authenticated' });
     }
   };
@@ -47,29 +46,29 @@ class SessionController {
   login = (req, res, next) => {
     passport.authenticate('login', async (error, user, info) => {
       if (error) {
-        console.log('Error during login:', error);
+        productionLogger.info('Error during login:', error);
         return res.status(500).json({ error: 'Internal Server Error' });
       }
       if (!user) {
-        console.log('Login failed: incorrect email or password');
+        productionLogger.info('Login failed: incorrect email or password');
         return res.status(401).json({ error: 'Email or password incorrect' });
       }
       req.logIn(user, async (error) => {
         if (error) {
-          console.log('Error logging in user:', error);
+          productionLogger.info('Error logging in user:', error);
           return res.status(500).json({ error: 'Internal Server Error' });
         }
   
-        console.log('User logged in successfully:', user);
+        productionLogger.info('User logged in successfully:', user);
 
         req.session.user = user;  
-        console.log('Session initialized with user:', req.session.user);
+        productionLogger.info('Session initialized with user:', req.session.user);
 
 
         user.last_connection = new Date();
         await user.save();
         
-        console.log('Session initialized with user:', req.session.user);
+        productionLogger.info('Session initialized with user:', req.session.user);
         return res.status(200).json({
           message: 'Login successful',
           first_name: user.first_name,
@@ -102,13 +101,13 @@ class SessionController {
 
   logout = (req, res) => {
     const userId = req.user._id;
-    console.log('Logging out user:', userId);
+    productionLogger.info('Logging out user:', userId);
     req.session.destroy(async (error) => {
       if (error) {
-        console.log('Error during logout:', error);
+        productionLogger.info('Error during logout:', error);
         return res.status(500).json({ status: 'error', error: error.message });
       } else {
-        console.log('Session destroyed for user:', userId);
+        productionLogger.info('Session destroyed for user:', userId);
         await usersModel.findByIdAndUpdate(userId, { last_connection: new Date() });
         return res.status(200).json({ status: 'success', message: 'Logout successful' });
       }
