@@ -95,16 +95,19 @@ class SessionController {
   }
 
   logout = (req, res) => {
-    const userId = req.user ? req.user._id : null;
-    if (!userId) {
+    if (!req.user) {
       return res.status(401).json({ error: 'No user found in session' });
     }
+  
+    const userId = req.user._id;
+  
     console.log('Logging out user:', userId);
     req.session.destroy(async (error) => {
       if (error) {
         console.log('Error during logout:', error);
         return res.status(500).json({ status: 'error', error: error.message });
       }
+  
       console.log('Session destroyed for user:', userId);
       await usersModel.findByIdAndUpdate(userId, { last_connection: new Date() });
       return res.status(200).json({ status: 'success', message: 'Logout successful' });
