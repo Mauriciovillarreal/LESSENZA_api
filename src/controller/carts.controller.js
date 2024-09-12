@@ -221,7 +221,7 @@ class CartController {
                 }
     
                 if (product.stock >= item.quantity) {
-                    productionLogger.info(`Product ${product._id} has sufficient stock:`, product.stock);
+                    console.log(`Product ${product._id} has sufficient stock:`, product.stock);
                     product.stock -= item.quantity;
                     await productService.updateProduct(product._id, product);
                     processedProducts.push({
@@ -231,7 +231,7 @@ class CartController {
                         price: product.price
                     });
                 } else {
-                    productionLogger.info(`Insufficient stock for product ${product._id}:`, product.stock);
+                    console.log(`Insufficient stock for product ${product._id}:`, product.stock);
                     unprocessedProducts.push({ productId: item.product, reason: 'Insufficient stock' });
                 }
             }
@@ -240,7 +240,7 @@ class CartController {
                 await cartService.updateCart(cid, {
                     products: cart.products.filter(item => unprocessedProducts.some(up => up.productId === item.product))
                 });
-                productionLogger.info('Updated cart products:', cart.products);
+                console.log('Updated cart products:', cart.products);
     
                 const ticket = await ticketService.createTicket({
                     purchaser: userId,
@@ -254,10 +254,10 @@ class CartController {
                     <p>Tu compra se ha completado exitosamente. Aquí tienes los detalles:</p>
                     <ul>
                         ${processedProducts.map(product => `
-                            <li>${product.name} - Cantidad: ${product.quantity}, Precio: ${product.price}€</li>
+                            <li>${product.name} - Cantidad: ${product.quantity}, Precio: AR$${product.price}</li>
                         `).join('')}
                     </ul>
-                    <p>Total pagado: ${ticket.amount}€</p>
+                    <p>Total pagado: AR$${ticket.amount}</p>
                 `;
     
                 await sendEmail({
