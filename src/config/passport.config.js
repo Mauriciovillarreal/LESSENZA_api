@@ -46,7 +46,7 @@ const initPassport = () => {
 
             return done(null, result)
         } catch (error) {
-            productionLogger.info('Error during registration:', error)
+            console.error('Error during registration:', error)
             return done(null, false, { message: 'Error al registrar: no se pudo crear el carrito' })
         }
     }))

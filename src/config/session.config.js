@@ -21,19 +21,14 @@ const initSession = (app, mongoUrl) => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: false,  // Mantén esto en false si no tienes HTTPS en desarrollo
-      sameSite: 'None',  // Alternativa para desarrollo
+      secure: true,  // Mantén esto en false si no tienes HTTPS en desarrollo
+      sameSite: 'Lax',  // Alternativa para desarrollo
       httpOnly: false
     }
     
   }));
 
-  console.log('Session middleware initialized with cookie settings:', {
-    secure: false,
-    sameSite: 'None',
-    httpOnly: true
-  });
-  
+
   initPassport();
 
   app.use(passport.initialize());
