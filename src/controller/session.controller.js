@@ -30,7 +30,7 @@ class SessionController {
       })
     })(req, res, next)
   }
-
+  
   getCurrentUser = async (req, res) => {
     productionLogger.info('Session data:', req.session);  // Verifica los datos de la sesión
     if (req.isAuthenticated()) {
@@ -42,7 +42,7 @@ class SessionController {
       res.status(401).json({ error: 'Not authenticated' });
     }
   }
-
+  
   login = (req, res, next) => {
     passport.authenticate('login', async (error, user, info) => {
       if (error) {
@@ -58,8 +58,8 @@ class SessionController {
           productionLogger.info('Error logging in user:', error);
           return res.status(500).json({ error: 'Internal Server Error' });
         }
-
-        req.session.user = user;
+  
+        req.session.user = user;  
 
         user.last_connection = new Date();
         await user.save();
@@ -75,7 +75,7 @@ class SessionController {
       });
     })(req, res, next);
   };
-
+  
 
   register = (req, res, next) => {
     passport.authenticate('register', (error, user, info) => {
@@ -93,10 +93,8 @@ class SessionController {
       })
     })(req, res, next)
   }
+
   logout = (req, res) => {
-    if (!req.user) {
-      return res.status(400).json({ status: 'error', message: 'No user session found' });
-    }
     const userId = req.user._id;
     productionLogger.info('Logging out user:', userId);
     req.session.destroy(async (error) => {
@@ -110,8 +108,7 @@ class SessionController {
       }
     });
   };
-
-
+  
 }
 
 module.exports = new SessionController()

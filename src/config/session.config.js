@@ -21,8 +21,8 @@ const initSession = (app, mongoUrl) => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: true,  // Mantén esto en false si no tienes HTTPS en desarrollo
-      sameSite: 'Lax',  // Alternativa para desarrollo
+      secure: false,  // Mantén esto en false si no tienes HTTPS en desarrollo
+      sameSite: 'None',  // Alternativa para desarrollo
       httpOnly: false
     }
     
