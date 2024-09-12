@@ -13,7 +13,7 @@ class SessionController {
         return res.status(500).json({ message: 'Authentication error' })
       }
       if (!user) {
-        productionLogger.info('No se encontró usuario')
+        console.log('No se encontró usuario')
         return res.redirect('/login')
       }
       req.logIn(user, async (err) => {
@@ -32,13 +32,13 @@ class SessionController {
   }
   
   getCurrentUser = async (req, res) => {
-    productionLogger.info('Session data:', req.session);  // Verifica los datos de la sesión
+    console.log('Session data:', req.session);  // Verifica los datos de la sesión
     if (req.isAuthenticated()) {
-      productionLogger.info('User is authenticated:', req.user);
+      console.log('User is authenticated:', req.user);
       const userDto = new UserCurrentDto(req.user);
       res.json({ user: userDto });
     } else {
-      productionLogger.info('User not authenticated');
+      console.log('User not authenticated');
       res.status(401).json({ error: 'Not authenticated' });
     }
   }
@@ -46,16 +46,16 @@ class SessionController {
   login = (req, res, next) => {
     passport.authenticate('login', async (error, user, info) => {
       if (error) {
-        productionLogger.info('Error during login:', error);
+        console.log('Error during login:', error);
         return res.status(500).json({ error: 'Internal Server Error' });
       }
       if (!user) {
-        productionLogger.info('Login failed: incorrect email or password');
+        console.log('Login failed: incorrect email or password');
         return res.status(401).json({ error: 'Email or password incorrect' });
       }
       req.logIn(user, async (error) => {
         if (error) {
-          productionLogger.info('Error logging in user:', error);
+          console.log('Error logging in user:', error);
           return res.status(500).json({ error: 'Internal Server Error' });
         }
   
@@ -96,13 +96,13 @@ class SessionController {
 
   logout = (req, res) => {
     const userId = req.user._id;
-    productionLogger.info('Logging out user:', userId);
+    console.log('Logging out user:', userId);
     req.session.destroy(async (error) => {
       if (error) {
-        productionLogger.info('Error during logout:', error);
+        console.log('Error during logout:', error);
         return res.status(500).json({ status: 'error', error: error.message });
       } else {
-        productionLogger.info('Session destroyed for user:', userId);
+        console.log('Session destroyed for user:', userId);
         await usersModel.findByIdAndUpdate(userId, { last_connection: new Date() });
         return res.status(200).json({ status: 'success', message: 'Logout successful' });
       }
