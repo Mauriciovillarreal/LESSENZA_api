@@ -4,6 +4,7 @@ const { CustomError } = require('../service/errors/CustomError.js')
 const { EErrors } = require('../service/errors/enums.js')
 const { generateCartErrorInfo } = require('../service/errors/info.js')
 const { productionLogger } = require('../utils/logger.js')
+const { sendEmail } = require('../utils/sendEmail.js')
 
 class CartController {
     constructor() {
@@ -186,80 +187,99 @@ class CartController {
     createTicket = async (req, res) => {
         try {
             if (!req.isAuthenticated()) {
-                return res.status(401).json({ error: 'User not authenticated' })
+                return res.status(401).json({ error: 'User not authenticated' });
             }
-
-            const { cid } = req.params
+    
+            const { cid } = req.params;
             if (!mongoose.Types.ObjectId.isValid(cid)) {
-                return res.status(400).json({ error: 'Invalid cart ID' })
+                return res.status(400).json({ error: 'Invalid cart ID' });
             }
-
-            const userId = req.user.email
-
-            const cart = await cartService.getCart(cid)
+    
+            const userId = req.user.email;
+    
+            const cart = await cartService.getCart(cid);
             if (!cart || !cart.products || cart.products.length === 0) {
-                return res.status(400).json({ error: 'Cart is empty or invalid' })
+                return res.status(400).json({ error: 'Cart is empty or invalid' });
             }
-
-            const unprocessedProducts = []
-            const processedProducts = []
-
+    
+            const unprocessedProducts = [];
+            const processedProducts = [];
+    
             for (const item of cart.products) {
                 if (!item.product) {
-                    console.warn('Product item is missing product ID')
-                    unprocessedProducts.push({ productId: null, reason: 'Missing product ID' })
-                    continue
+                    console.warn('Product item is missing product ID');
+                    unprocessedProducts.push({ productId: null, reason: 'Missing product ID' });
+                    continue;
                 }
-
-                const product = await productService.getProduct(item.product)
-
+    
+                const product = await productService.getProduct(item.product);
+    
                 if (!product) {
-                    console.warn(`Product with ID ${item.product} not found`)
-                    unprocessedProducts.push({ productId: item.product, reason: 'Product not found' })
-                    continue
+                    console.warn(`Product with ID ${item.product} not found`);
+                    unprocessedProducts.push({ productId: item.product, reason: 'Product not found' });
+                    continue;
                 }
-
+    
                 if (product.stock >= item.quantity) {
-                    productionLogger.info(`Product ${product._id} has sufficient stock:`, product.stock)
-                    product.stock -= item.quantity
-                    await productService.updateProduct(product._id, product)
+                    productionLogger.info(`Product ${product._id} has sufficient stock:`, product.stock);
+                    product.stock -= item.quantity;
+                    await productService.updateProduct(product._id, product);
                     processedProducts.push({
                         productId: product._id,
                         name: product.name,
                         quantity: item.quantity,
                         price: product.price
-                    })
+                    });
                 } else {
-                    productionLogger.info(`Insufficient stock for product ${product._id}:`, product.stock)
-                    unprocessedProducts.push({ productId: item.product, reason: 'Insufficient stock' })
+                    productionLogger.info(`Insufficient stock for product ${product._id}:`, product.stock);
+                    unprocessedProducts.push({ productId: item.product, reason: 'Insufficient stock' });
                 }
             }
-
+    
             if (processedProducts.length > 0) {
                 await cartService.updateCart(cid, {
                     products: cart.products.filter(item => unprocessedProducts.some(up => up.productId === item.product))
-                })
-                productionLogger.info('Updated cart products:', cart.products)
-
+                });
+                productionLogger.info('Updated cart products:', cart.products);
+    
                 const ticket = await ticketService.createTicket({
                     purchaser: userId,
                     products: processedProducts,
                     amount: processedProducts.reduce((acc, item) => acc + (item.quantity * item.price), 0)
-                })
-
+                });
+    
+                // Enviar correo con la información de la compra
+                const emailContent = `
+                    <h1>Gracias por tu compra en L'essenza Store</h1>
+                    <p>Tu compra se ha completado exitosamente. Aquí tienes los detalles:</p>
+                    <ul>
+                        ${processedProducts.map(product => `
+                            <li>${product.name} - Cantidad: ${product.quantity}, Precio: ${product.price}€</li>
+                        `).join('')}
+                    </ul>
+                    <p>Total pagado: ${ticket.amount}€</p>
+                `;
+    
+                await sendEmail({
+                    userMail: userId,
+                    subject: 'Confirmación de compra',
+                    html: emailContent
+                });
+    
                 return res.json({
                     message: "Purchase completed successfully",
                     ticket: ticket,
                     unprocessedProducts: unprocessedProducts
-                })
+                });
             } else {
-                return res.status(400).json({ error: 'No products were processed' })
+                return res.status(400).json({ error: 'No products were processed' });
             }
         } catch (error) {
-            console.error('An error occurred while creating the ticket:', error)
-            res.status(500).json({ error: 'Internal server error' })
+            console.error('An error occurred while creating the ticket:', error);
+            res.status(500).json({ error: 'Internal server error' });
         }
     }
+    
 
 }
 
