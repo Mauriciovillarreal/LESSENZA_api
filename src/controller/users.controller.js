@@ -6,7 +6,7 @@ const { generateUserErrorInfo } = require('../service/errors/info.js')
 const { sendEmail } = require('../utils/sendEmail.js')
 const { usersModel } = require('../dao/MONGO/models/users.model.js')
 const { productionLogger } = require('../utils/logger.js')
-productionLogger
+
 class UserController {
     constructor() {
         this.usersService = userService

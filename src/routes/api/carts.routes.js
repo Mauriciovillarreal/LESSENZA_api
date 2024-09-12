@@ -21,6 +21,6 @@ router.post('/:cid/product/:pid', addProductToCart)
 router.post('/:cid/purchase', [ authUser ] , createTicket)
 router.delete('/:cid', deleteCart)
 router.delete('/:cid/products/:pid', deleteProduct)
-router.put('/:cid/products/:pid',[ authUser , authPremium ] , updateProductQuantity)
+router.put('/:cid/products/:pid', updateProductQuantity)
 
 module.exports = router
