@@ -78,6 +78,7 @@ const initPassport = () => {
                     productionLogger.info("Usuario no encontrado")
                     return done(null, false)
                 }
+                console.log()
                 if (!IsValidPassword(password, { password: user.password })) {
                     productionLogger.info("Contraseña incorrecta")
                     return done(null, false)

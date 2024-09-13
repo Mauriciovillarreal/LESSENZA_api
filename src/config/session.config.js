@@ -21,9 +21,9 @@ const initSession = (app, mongoUrl) => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: false,  // Mantén esto en false si no tienes HTTPS en desarrollo
+      secure: true,  // Mantén esto en false si no tienes HTTPS en desarrollo
       sameSite: 'None',  // Alternativa para desarrollo
-      httpOnly: false
+      httpOnly: true
     }
   }));
 
