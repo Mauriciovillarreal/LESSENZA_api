@@ -32,7 +32,7 @@ class SessionController {
       });
     })(req, res, next);
   };
-  
+
   getCurrentUser = async (req, res) => {
     console.log('Datos de la sesión:', req.session);  // Verifica los datos de la sesión
     if (req.isAuthenticated()) {
@@ -44,7 +44,7 @@ class SessionController {
       res.status(401).json({ error: 'Not authenticated' });
     }
   };
-  
+
   login = (req, res, next) => {
     passport.authenticate('login', async (error, user, info) => {
       if (error) {
@@ -55,7 +55,7 @@ class SessionController {
         console.log('Fallo de inicio de sesión: correo o contraseña incorrectos');
         return res.status(401).json({ error: 'Email or password incorrect' });
       }
-      
+
       req.logIn(user, async (error) => {
         if (error) {
           console.error('Error al iniciar sesión al usuario:', error);
@@ -103,33 +103,32 @@ class SessionController {
   };
 
   logout = (req, res) => {
-    if (!req.user) {
-      console.log('Logout: No hay usuario en la sesión'); // Mensaje detallado
+    if (req.isAuthenticated()) {
+      const userId = req.user._id;
+      console.log(`Logout: Cerrando sesión para el usuario con ID: ${userId}`);
+      req.session.destroy(async (error) => {
+        if (error) {
+          console.error('Logout: Error al destruir la sesión', error);
+          return res.status(500).json({ status: 'error', error: error.message });
+        }
+  
+        console.log(`Logout: Sesión destruida exitosamente para el usuario con ID: ${userId}`);
+        try {
+          // Actualizamos la última conexión del usuario después de cerrar sesión
+          await usersModel.findByIdAndUpdate(userId, { last_connection: new Date() });
+          console.log(`Logout: Última conexión actualizada para el usuario con ID: ${userId}`);
+        } catch (updateError) {
+          console.error('Logout: Error al actualizar la última conexión', updateError);
+          return res.status(500).json({ status: 'error', error: updateError.message });
+        }
+  
+        return res.status(200).json({ status: 'success', message: 'Logout successful' });
+      });
+    } else {
+      console.log('Logout: No hay usuario en la sesión');
       return res.status(401).json({ error: 'No user found in session' });
     }
-
-    const userId = req.user._id;
-    console.log(`Logout: Cerrando sesión para el usuario con ID: ${userId}`); // Log con el ID del usuario
-
-    req.session.destroy(async (error) => {
-      if (error) {
-        console.error('Logout: Error al destruir la sesión', error); // Error detallado si hay problemas al destruir la sesión
-        return res.status(500).json({ status: 'error', error: error.message });
-      }
-
-      console.log(`Logout: Sesión destruida exitosamente para el usuario con ID: ${userId}`); // Confirmación de sesión destruida
-      try {
-        // Actualizamos la última conexión del usuario después de cerrar sesión
-        await usersModel.findByIdAndUpdate(userId, { last_connection: new Date() });
-        console.log(`Logout: Última conexión actualizada para el usuario con ID: ${userId}`); // Confirmación de actualización
-      } catch (updateError) {
-        console.error('Logout: Error al actualizar la última conexión', updateError); // Error si no se puede actualizar la última conexión
-        return res.status(500).json({ status: 'error', error: updateError.message });
-      }
-
-      return res.status(200).json({ status: 'success', message: 'Logout successful' });
-    });
-};
+  };
 
 }
 
