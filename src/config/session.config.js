@@ -7,7 +7,6 @@ const { objetConfig } = require('../config/index.js')
 const { session_secret } = objetConfig
 
 const initSession = (app, mongoUrl) => {
-
   app.use(session({
     store: MongoStore.create({
       mongoUrl,
@@ -21,8 +20,8 @@ const initSession = (app, mongoUrl) => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: true,  // Mantén esto en false si no tienes HTTPS en desarrollo
-      sameSite: 'None',  // Alternativa para desarrollo
+      secure: false,  // Set to false if you're not using HTTPS in development
+      sameSite: 'Lax',  // or 'Strict' depending on your use case
       httpOnly: true
     }
   }));
