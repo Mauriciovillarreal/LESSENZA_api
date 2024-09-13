@@ -32,26 +32,9 @@ const initSession = (app, mongoUrl) => {
   app.use(passport.session());
 
   app.use((req, res, next) => {
-
-    if (req.session) {
-      // Regenerate the session ID on each request
-      req.session.regenerate((err) => {
-        if (err) {
-          console.error(err);
-        } else {
-          // Set the session ID cookie only if it's not already set
-          if (!req.cookies.sessionID) {
-            res.cookie('sessionID', req.sessionID, {
-              httpOnly: true,
-              secure: false, // Set to false if you're not using HTTPS in development
-              sameSite: 'Lax', // or 'Strict' depending on your use case
-            });
-          }
-        }
-      });
-    }
     next();
   });
 };
+
 
 module.exports = { initSession }
