@@ -128,7 +128,7 @@ class SessionController {
       });
     } else {
       console.log('Logout: No hay usuario en la sesión');
-      return res.status(401).json({ error: 'No user found in session' });
+      return res.status(200).json({ status: 'success', message: 'Logout successful' });
     }
   };
 
