@@ -21,7 +21,7 @@ const initSession = (app, mongoUrl) => {
     saveUninitialized: false,
     cookie: {
       secure: false,  // Set to false if you're not using HTTPS in development
-      sameSite: 'Lax',  // or 'Strict' depending on your use case
+      sameSite: 'Strict',  // or 'Strict' depending on your use case
       domain: 'https://lessenza.onrender.com'
     }
   }));
