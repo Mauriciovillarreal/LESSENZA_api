@@ -9,7 +9,6 @@ const UserDto = require('../dto/user.dto.js')
 const mongoose = require('mongoose')
 const { productionLogger } = require('../utils/logger.js')
 const { sendEmail } = require('../utils/sendEmail.js')
-const { usersModel } = require('../service/index.js')
 
 const { adminEmail, adminPassword } = objetConfig
 
@@ -79,7 +78,6 @@ const initPassport = () => {
                     productionLogger.info("Usuario no encontrado")
                     return done(null, false)
                 }
-
                 if (!IsValidPassword(password, { password: user.password })) {
                     productionLogger.info("Contraseña incorrecta")
                     return done(null, false)
@@ -125,26 +123,26 @@ const initPassport = () => {
     ))
 
     passport.serializeUser((user, done) => {
-        console.log('Serializando usuario: ', user);  // Para verificar qué usuario se está serializando
-        done(null, user._id);  // Almacena el ID del usuario en la sesión
-    });
+        done(null, { _id: user._id, role: user.role });
+    });//a
 
-    // Deserialización del usuario
-    passport.deserializeUser(async (id, done) => {
+    passport.deserializeUser(async (serializedUser, done) => {
+        console.log('Deserializando usuario:', serializedUser);
         try {
-            console.log('Deserializando usuario con ID:', id);  // Añade logs para verificar si se ejecuta correctamente
-            const user = await usersModel.findById(id);  // Recupera el usuario de la base de datos
-            if (user) {
-                console.log('Usuario encontrado durante deserialización:', user);
-                done(null, user);  // Si encuentra el usuario, lo pasa a `req.user`
-            } else {
-                done(null, false);  // Si no encuentra el usuario, pasa `false`
-            }
+          if (serializedUser._id === hardcodedUser._id.toString()) {
+            return done(null, hardcodedUser);
+          }
+          if (mongoose.Types.ObjectId.isValid(serializedUser._id)) {
+            let user = await userService.getUsersBy({ _id: new mongoose.Types.ObjectId(serializedUser._id) });
+            done(null, user);
+          } else {
+            done(null, false);
+          }
         } catch (error) {
-            console.error('Error deserializando usuario:', error);
-            done(error, false);  // En caso de error, pasa el error
+          done(error);
         }
-    });
+      });
+      
 
 }
 
