@@ -20,9 +20,9 @@ const initSession = (app, mongoUrl) => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: false,  // Set to false if you're not using HTTPS in development
+      secure: true,  // Set to false if you're not using HTTPS in development
+      httpOnly: true,
       sameSite: 'Lax',  // or 'Strict' depending on your use case
-      httpOnly: true
     }
   }));
 
@@ -32,6 +32,19 @@ const initSession = (app, mongoUrl) => {
   app.use(passport.session());
 
   app.use((req, res, next) => {
+    if (req.session) {
+      req.session.regenerate((err) => {
+        if (err) {
+          console.error(err);
+        } else {
+          res.cookie('sessionID', req.sessionID, {
+            httpOnly: true,
+            secure: true,
+            sameSite: 'Lax',
+          });
+        }
+      });
+    }
     next();
   });
 };
