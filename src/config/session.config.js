@@ -25,15 +25,29 @@ const initSession = (app, mongoUrl) => {
       sameSite: 'None',  // Alternativa para desarrollo
       httpOnly: false
     }
-    
   }));
-
 
   initPassport();
 
   app.use(passport.initialize());
-  app.use(passport.session());
-
+  app.use(passport.session({
+    store: MongoStore.create({
+      mongoUrl,
+      mongoOptions: {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      },
+      ttl: 60 * 60 * 1000 * 24
+    }),
+    secret: session_secret,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: false,  // Mantén esto en false si no tienes HTTPS en desarrollo
+      sameSite: 'None',  // Alternativa para desarrollo
+      httpOnly: false
+    }
+  }));
   app.use((req, res, next) => {
     next();
   });
