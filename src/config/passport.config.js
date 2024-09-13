@@ -78,7 +78,7 @@ const initPassport = () => {
                     productionLogger.info("Usuario no encontrado")
                     return done(null, false)
                 }
-                console.log()
+
                 if (!IsValidPassword(password, { password: user.password })) {
                     productionLogger.info("Contraseña incorrecta")
                     return done(null, false)
@@ -125,26 +125,19 @@ const initPassport = () => {
 
     passport.serializeUser((user, done) => {
         done(null, { _id: user._id, role: user.role });
-    });//a
+    });
 
     passport.deserializeUser(async (serializedUser, done) => {
-        console.log('Deserializando usuario:', serializedUser);
-        try {
-          if (serializedUser._id === hardcodedUser._id.toString()) {
+        if (serializedUser._id === hardcodedUser._id.toString()) {
             return done(null, hardcodedUser);
-          }
-          if (mongoose.Types.ObjectId.isValid(serializedUser._id)) {
+        }
+        try {
             let user = await userService.getUsersBy({ _id: new mongoose.Types.ObjectId(serializedUser._id) });
             done(null, user);
-          } else {
-            done(null, false);
-          }
         } catch (error) {
-          done(error);
+            done(error);
         }
-      });
-      
-
+    });
 }
 
 module.exports = { initPassport }

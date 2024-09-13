@@ -20,10 +20,10 @@ const initSession = (app, mongoUrl) => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: false,  // Set to false if you're not using HTTPS in development
-      sameSite: 'Lax',  // or 'Strict' depending on your use case
+      secure: true,  // Set to false if you're not using HTTPS in development
+      sameSite: 'None',  // or 'Strict' depending on your use case
       httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000 // 1 día
+      maxAge: 60 * 60 * 1000 * 24 // 1 día
     }
   }));
 //add
