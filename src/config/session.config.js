@@ -22,12 +22,10 @@ const initSession = (app, mongoUrl) => {
     cookie: {
       secure: false,  // Set to false if you're not using HTTPS in development
       sameSite: 'Lax',  // or 'Strict' depending on your use case
-      httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000,
-      domain: 'https://lessenza.onrender.com' // 1 día
+      domain: 'https://lessenza.onrender.com'
     }
   }));
-//add
+
   initPassport();
 
   app.use(passport.initialize());
