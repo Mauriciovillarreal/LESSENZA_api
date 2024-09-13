@@ -25,7 +25,7 @@ const initSession = (app, mongoUrl) => {
       httpOnly: true
     }
   }));
-
+//add
   initPassport();
 
   app.use(passport.initialize());
