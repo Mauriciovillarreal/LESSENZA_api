@@ -95,7 +95,7 @@ class SessionController {
   }
 
   logout = (req, res) => {
-    console.log("REQ USER" + req.user)
+    console.log("REQ USER " + req)
     if (!req.user) {
       return res.status(401).json({ error: 'No user found in session' });
     }
