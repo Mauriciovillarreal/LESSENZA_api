@@ -128,13 +128,22 @@ const initPassport = () => {
     });//a
 
     passport.deserializeUser(async (serializedUser, done) => {
+        console.log('Deserializando usuario:', serializedUser);
         try {
+          if (serializedUser._id === hardcodedUser._id.toString()) {
+            return done(null, hardcodedUser);
+          }
+          if (mongoose.Types.ObjectId.isValid(serializedUser._id)) {
             let user = await userService.getUsersBy({ _id: new mongoose.Types.ObjectId(serializedUser._id) });
             done(null, user);
+          } else {
+            done(null, false);
+          }
         } catch (error) {
-            done(error);
+          done(error);
         }
-    });
+      });
+      
 
 }
 
