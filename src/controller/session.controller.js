@@ -1,65 +1,69 @@
-const passport = require('passport')
-const UserCurrentDto = require('../dto/userCurrent.dto')
-const { usersModel } = require('../dao/MONGO/models/users.model')
-const { productionLogger } = require('../utils/logger')
+const passport = require('passport');
+const UserCurrentDto = require('../dto/userCurrent.dto');
+const { usersModel } = require('../dao/MONGO/models/users.model');
+const { productionLogger } = require('../utils/logger');
 
 class SessionController {
-  githubAuth = passport.authenticate('github', { scope: 'user:email' })
+  githubAuth = passport.authenticate('github', { scope: 'user:email' });
 
   githubCallback = (req, res, next) => {
     passport.authenticate('github', { failureRedirect: '/login' }, async (err, user) => {
       if (err) {
-        console.error('Error en autenticación de GitHub:', err)
-        return res.status(500).json({ message: 'Authentication error' })
+        console.error('Error en autenticación de GitHub:', err);
+        return res.status(500).json({ message: 'Authentication error' });
       }
       if (!user) {
-        console.log('No se encontró usuario')
-        return res.redirect('/login')
+        console.log('GitHub callback: Usuario no encontrado');
+        return res.redirect('/login');
       }
+
       req.logIn(user, async (err) => {
         if (err) {
-          console.error('Error al iniciar sesión:', err)
-          return res.status(500).json({ message: 'Login error' })
+          console.error('Error al iniciar sesión con GitHub:', err);
+          return res.status(500).json({ message: 'Login error' });
         }
         // Actualizar la última conexión
-        user.last_connection = new Date()
-        await user.save()
+        console.log(`Usuario ${user.email} autenticado con GitHub, actualizando última conexión`);
+        user.last_connection = new Date();
+        await user.save();
 
-        req.session.user = user
-        return res.redirect('https://lessenza.onrender.com')
-      })
-    })(req, res, next)
-  }
+        req.session.user = user;
+        return res.redirect('https://lessenza.onrender.com');
+      });
+    })(req, res, next);
+  };
   
   getCurrentUser = async (req, res) => {
-    console.log('Session data:', req.session);  // Verifica los datos de la sesión
+    console.log('Datos de la sesión:', req.session);  // Verifica los datos de la sesión
     if (req.isAuthenticated()) {
-      console.log('User is authenticated:', req.user);
+      console.log('Usuario autenticado:', req.user);
       const userDto = new UserCurrentDto(req.user);
       res.json({ user: userDto });
     } else {
-      console.log('User not authenticated');
+      console.log('Usuario no autenticado');
       res.status(401).json({ error: 'Not authenticated' });
     }
-  }
+  };
   
   login = (req, res, next) => {
     passport.authenticate('login', async (error, user, info) => {
       if (error) {
-        console.log('Error during login:', error);
+        console.error('Error durante el inicio de sesión:', error);
         return res.status(500).json({ error: 'Internal Server Error' });
       }
       if (!user) {
-        console.log('Login failed: incorrect email or password');
+        console.log('Fallo de inicio de sesión: correo o contraseña incorrectos');
         return res.status(401).json({ error: 'Email or password incorrect' });
       }
+      
       req.logIn(user, async (error) => {
         if (error) {
-          console.log('Error logging in user:', error);
+          console.error('Error al iniciar sesión al usuario:', error);
           return res.status(500).json({ error: 'Internal Server Error' });
         }
-  
-        req.session.user = user;  
+
+        console.log(`Usuario ${user.email} ha iniciado sesión. Actualizando última conexión.`);
+        req.session.user = user;
 
         user.last_connection = new Date();
         await user.save();
@@ -70,52 +74,63 @@ class SessionController {
           email: user.email,
           role: user.role,
           last_name: user.last_name,
-          cart: user.cart
+          cart: user.cart,
         });
       });
     })(req, res, next);
   };
-  
 
   register = (req, res, next) => {
     passport.authenticate('register', (error, user, info) => {
       if (error) {
-        return next(error)
+        console.error('Error durante el registro:', error);
+        return next(error);
       }
       if (!user) {
-        return res.status(400).json({ message: 'Error registering user' })
+        console.log('Fallo al registrar usuario');
+        return res.status(400).json({ message: 'Error registering user' });
       }
+
       req.logIn(user, (error) => {
         if (error) {
-          return next(error)
+          console.error('Error al iniciar sesión tras registro:', error);
+          return next(error);
         }
-        return res.status(200).json({ success: true, message: 'User registered successfully' })
-      })
-    })(req, res, next)
-  }
+        console.log(`Usuario ${user.email} registrado y autenticado con éxito.`);
+        return res.status(200).json({ success: true, message: 'User registered successfully' });
+      });
+    })(req, res, next);
+  };
 
   logout = (req, res) => {
-    console.log("REQ USER " + req)
     if (!req.user) {
+      console.log('Logout: No hay usuario en la sesión'); // Mensaje detallado
       return res.status(401).json({ error: 'No user found in session' });
     }
-  
+
     const userId = req.user._id;
-  
-    console.log('Logging out user:', userId);
+    console.log(`Logout: Cerrando sesión para el usuario con ID: ${userId}`); // Log con el ID del usuario
+
     req.session.destroy(async (error) => {
       if (error) {
-        console.log('Error during logout:', error);
+        console.error('Logout: Error al destruir la sesión', error); // Error detallado si hay problemas al destruir la sesión
         return res.status(500).json({ status: 'error', error: error.message });
       }
-  
-      console.log('Session destroyed for user:', userId);
-      await usersModel.findByIdAndUpdate(userId, { last_connection: new Date() });
+
+      console.log(`Logout: Sesión destruida exitosamente para el usuario con ID: ${userId}`); // Confirmación de sesión destruida
+      try {
+        // Actualizamos la última conexión del usuario después de cerrar sesión
+        await usersModel.findByIdAndUpdate(userId, { last_connection: new Date() });
+        console.log(`Logout: Última conexión actualizada para el usuario con ID: ${userId}`); // Confirmación de actualización
+      } catch (updateError) {
+        console.error('Logout: Error al actualizar la última conexión', updateError); // Error si no se puede actualizar la última conexión
+        return res.status(500).json({ status: 'error', error: updateError.message });
+      }
+
       return res.status(200).json({ status: 'success', message: 'Logout successful' });
     });
-  };
-  
-  
+};
+
 }
 
-module.exports = new SessionController()
+module.exports = new SessionController();
