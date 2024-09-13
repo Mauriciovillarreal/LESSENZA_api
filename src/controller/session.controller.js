@@ -103,6 +103,8 @@ class SessionController {
   };
 
   logout = (req, res) => {
+    console.log('Logout: req.session', req.session);
+    console.log('Logout: req.user', req.user);
     if (req.isAuthenticated()) {
       const userId = req.user._id;
       console.log(`Logout: Cerrando sesión para el usuario con ID: ${userId}`);
