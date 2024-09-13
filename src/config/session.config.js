@@ -1,15 +1,12 @@
-const session = require('express-session');
-const passport = require('passport');
-const MongoStore = require('connect-mongo');
-const { initPassport } = require('../../src/config/passport.config.js');
-const { objetConfig } = require('../config/index.js');
+const session = require('express-session')
+const passport = require('passport')
+const MongoStore = require('connect-mongo')
+const { initPassport } = require('../../src/config/passport.config.js')
+const { objetConfig } = require('../config/index.js')
 
-const { session_secret } = objetConfig;
+const { session_secret } = objetConfig
 
 const initSession = (app, mongoUrl) => {
-  console.log('Inicializando sesión con MongoDB en:', mongoUrl);  // Log para verificar la URL de MongoDB
-
-  // Configuración de la sesión
   app.use(session({
     store: MongoStore.create({
       mongoUrl,
@@ -17,39 +14,29 @@ const initSession = (app, mongoUrl) => {
         useNewUrlParser: true,
         useUnifiedTopology: true
       },
-      ttl: 60 * 60 * 1000 * 24 // 24 horas
+      ttl: 60 * 60 * 1000 * 24
     }),
     secret: session_secret,
-    resave: false,  // No vuelve a guardar la sesión si no hay cambios
-    saveUninitialized: false,  // No guarda sesiones vacías
+    resave: false,
+    saveUninitialized: false,
     cookie: {
-      secure: false,  // Cambiar a true si usas HTTPS en producción
-      sameSite: 'Strict',
-      domain: 'lessenza.onrender.com'  // El dominio debe coincidir
+      secure: false,  // true en producción con HTTPS
+      sameSite: 'Strict',  // O 'Lax' dependiendo del flujo
+      domain: 'lessenza.onrender.com'  
     }
   }));
 
-  // Inicialización de Passport
-  console.log('Inicializando Passport');
-  initPassport();  // Inicialización de la estrategia Passport
+  initPassport();
 
-  // Middleware para depurar cada solicitud y revisar el estado de la sesión
-  app.use((req, res, next) => {
-    console.log('Revisando sesión: ', req.session);  // Verifica la sesión
-    console.log('Revisando usuario autenticado: ', req.user);  // Verifica el usuario autenticado
-    next();
-  });
-
-  // Inicializar Passport y las sesiones de Passport
   app.use(passport.initialize());
   app.use(passport.session());
 
-  // Middleware adicional si es necesario
   app.use((req, res, next) => {
-    console.log('Sesión guardada:', req.session);  // Verifica si la sesión está guardando datos
+    console.log('Sesión guardada:', req.session);  // Verifica si la sesión contiene la información correcta
     next();
   });
-
+  
 };
 
-module.exports = { initSession };
+
+module.exports = { initSession }

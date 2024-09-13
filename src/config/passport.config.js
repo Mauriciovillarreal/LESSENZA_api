@@ -131,17 +131,20 @@ const initPassport = () => {
       // Deserialización del usuario
       passport.deserializeUser(async (id, done) => {
         try {
-          console.log('Deserializando usuario con ID:', id);  // Verifica si se está deserializando correctamente
-          const user = await usersModel.findById(id);
+          console.log('Deserializando usuario con ID:', id);  // Añade logs para verificar si se ejecuta correctamente
+          const user = await usersModel.findById(id);  // Recupera el usuario de la base de datos
           if (user) {
-            done(null, user);
+            console.log('Usuario encontrado durante deserialización:', user);
+            done(null, user);  // Si encuentra el usuario, lo pasa a `req.user`
           } else {
-            done(null, false);
+            done(null, false);  // Si no encuentra el usuario, pasa `false`
           }
         } catch (error) {
-          done(error, false);
+          console.error('Error deserializando usuario:', error);
+          done(error, false);  // En caso de error, pasa el error
         }
       });
+      
 }
 
 module.exports = { initPassport }
