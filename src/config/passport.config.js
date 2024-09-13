@@ -9,6 +9,7 @@ const UserDto = require('../dto/user.dto.js')
 const mongoose = require('mongoose')
 const { productionLogger } = require('../utils/logger.js')
 const { sendEmail } = require('../utils/sendEmail.js')
+const { usersModel } = require('../service/index.js')
 
 const { adminEmail, adminPassword } = objetConfig
 
@@ -126,25 +127,25 @@ const initPassport = () => {
     passport.serializeUser((user, done) => {
         console.log('Serializando usuario: ', user);  // Para verificar qué usuario se está serializando
         done(null, user._id);  // Almacena el ID del usuario en la sesión
-      });
-      
-      // Deserialización del usuario
-      passport.deserializeUser(async (id, done) => {
+    });
+
+    // Deserialización del usuario
+    passport.deserializeUser(async (id, done) => {
         try {
-          console.log('Deserializando usuario con ID:', id);  // Añade logs para verificar si se ejecuta correctamente
-          const user = await usersModel.findById(id);  // Recupera el usuario de la base de datos
-          if (user) {
-            console.log('Usuario encontrado durante deserialización:', user);
-            done(null, user);  // Si encuentra el usuario, lo pasa a `req.user`
-          } else {
-            done(null, false);  // Si no encuentra el usuario, pasa `false`
-          }
+            console.log('Deserializando usuario con ID:', id);  // Añade logs para verificar si se ejecuta correctamente
+            const user = await usersModel.findById(id);  // Recupera el usuario de la base de datos
+            if (user) {
+                console.log('Usuario encontrado durante deserialización:', user);
+                done(null, user);  // Si encuentra el usuario, lo pasa a `req.user`
+            } else {
+                done(null, false);  // Si no encuentra el usuario, pasa `false`
+            }
         } catch (error) {
-          console.error('Error deserializando usuario:', error);
-          done(error, false);  // En caso de error, pasa el error
+            console.error('Error deserializando usuario:', error);
+            done(error, false);  // En caso de error, pasa el error
         }
-      });
-      
+    });
+
 }
 
 module.exports = { initPassport }
