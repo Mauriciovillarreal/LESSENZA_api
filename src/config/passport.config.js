@@ -124,20 +124,24 @@ const initPassport = () => {
     ))
 
     passport.serializeUser((user, done) => {
-        done(null, { _id: user._id, role: user.role });
-    });
-
-    passport.deserializeUser(async (serializedUser, done) => {
-        if (serializedUser._id === hardcodedUser._id.toString()) {
-            return done(null, hardcodedUser);
-        }
+        console.log('Serializando usuario: ', user);  // Para verificar qué usuario se está serializando
+        done(null, user._id);  // Almacena el ID del usuario en la sesión
+      });
+      
+      // Deserialización del usuario
+      passport.deserializeUser(async (id, done) => {
         try {
-            let user = await userService.getUsersBy({ _id: new mongoose.Types.ObjectId(serializedUser._id) });
+          console.log('Deserializando usuario con ID:', id);  // Verifica si se está deserializando correctamente
+          const user = await usersModel.findById(id);
+          if (user) {
             done(null, user);
+          } else {
+            done(null, false);
+          }
         } catch (error) {
-            done(error);
+          done(error, false);
         }
-    });
+      });
 }
 
 module.exports = { initPassport }

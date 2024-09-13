@@ -61,13 +61,13 @@ class SessionController {
           console.error('Error al iniciar sesión al usuario:', error);
           return res.status(500).json({ error: 'Internal Server Error' });
         }
-
-        console.log(`Usuario ${user.email} ha iniciado sesión. Actualizando última conexión.`);
+      
+        console.log('Usuario autenticado:', user);  // Verifica si el usuario se autentica correctamente
         req.session.user = user;
-
+      
         user.last_connection = new Date();
         await user.save();
-
+      
         return res.status(200).json({
           message: 'Login successful',
           first_name: user.first_name,
@@ -77,6 +77,7 @@ class SessionController {
           cart: user.cart,
         });
       });
+      
     })(req, res, next);
   };
 

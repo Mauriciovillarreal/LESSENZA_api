@@ -20,12 +20,12 @@ const initSession = (app, mongoUrl) => {
       ttl: 60 * 60 * 1000 * 24 // 24 horas
     }),
     secret: session_secret,
-    resave: false,
-    saveUninitialized: false,
+    resave: false,  // No vuelve a guardar la sesión si no hay cambios
+    saveUninitialized: false,  // No guarda sesiones vacías
     cookie: {
-      secure: false,  // Set to false if you're not usando HTTPS en desarrollo
-      sameSite: 'Strict',  // Configura según tu caso de uso
-      domain: 'lessenza.onrender.com',  // Asegúrate de que esto coincida con tu dominio
+      secure: false,  // Cambiar a true si usas HTTPS en producción
+      sameSite: 'Strict',
+      domain: 'lessenza.onrender.com'  // El dominio debe coincidir
     }
   }));
 
@@ -46,8 +46,10 @@ const initSession = (app, mongoUrl) => {
 
   // Middleware adicional si es necesario
   app.use((req, res, next) => {
+    console.log('Sesión guardada:', req.session);  // Verifica si la sesión está guardando datos
     next();
   });
+
 };
 
 module.exports = { initSession };
