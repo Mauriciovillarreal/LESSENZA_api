@@ -41,8 +41,8 @@ const initPassport = () => {
             let result = await userService.create(userDto)
 
             const html = `<h1>Bienvenido ${result.first_name} ${result.last_name}</h1>`
-            
-            sendEmail({userMail: result.email, subject : `Se a creado correctamente el usuario ${result.email}`, html})
+
+            sendEmail({ userMail: result.email, subject: `Se a creado correctamente el usuario ${result.email}`, html })
 
             return done(null, result)
         } catch (error) {
@@ -125,17 +125,17 @@ const initPassport = () => {
 
     passport.serializeUser((user, done) => {
         done(null, { _id: user._id, role: user.role });
-      });
-      
-      passport.deserializeUser(async (serializedUser, done) => {
+    });//a
+
+    passport.deserializeUser(async (serializedUser, done) => {
         try {
-          let user = await userService.getUsersBy({ _id: new mongoose.Types.ObjectId(serializedUser._id) });
-          done(null, user);
+            let user = await userService.getUsersBy({ _id: new mongoose.Types.ObjectId(serializedUser._id) });
+            done(null, user);
         } catch (error) {
-          done(error);
+            done(error);
         }
-      });
-      
+    });
+
 }
 
 module.exports = { initPassport }
