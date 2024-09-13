@@ -124,24 +124,18 @@ const initPassport = () => {
     ))
 
     passport.serializeUser((user, done) => {
-        done(null, { _id: user._id, role: user.role })
-    })
-
-    passport.deserializeUser(async (serializedUser, done) => {
+        done(null, { _id: user._id, role: user.role });
+      });
+      
+      passport.deserializeUser(async (serializedUser, done) => {
         try {
-            if (serializedUser._id === hardcodedUser._id.toString()) {
-                return done(null, hardcodedUser)
-            }
-            if (mongoose.Types.ObjectId.isValid(serializedUser._id)) {
-                let user = await userService.getUsersBy({ _id: new mongoose.Types.ObjectId(serializedUser._id) })
-                done(null, user)
-            } else {
-                done(null, false)
-            }
+          let user = await userService.getUsersBy({ _id: new mongoose.Types.ObjectId(serializedUser._id) });
+          done(null, user);
         } catch (error) {
-            done(error)
+          done(error);
         }
-    })
+      });
+      
 }
 
 module.exports = { initPassport }
