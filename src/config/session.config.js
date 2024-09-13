@@ -21,6 +21,7 @@ const initSession = (app, mongoUrl) => {
     saveUninitialized: false,
     cookie: {
       secure: false,  // true en producción con HTTPS
+      httpOnly: true,
       sameSite: 'Strict',  // O 'Lax' dependiendo del flujo
       domain: 'lessenza.onrender.com'  
     }
