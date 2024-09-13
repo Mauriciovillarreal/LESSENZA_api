@@ -17,8 +17,8 @@ const initSession = (app, mongoUrl) => {
       ttl: 60 * 60 * 1000 * 24
     }),
     secret: session_secret,
-    resave: true,  // Set to true to force session save
-    saveUninitialized: true,  // Set to true to save new sessions
+    resave: false,
+    saveUninitialized: false,
     cookie: {
       secure: false,  // Set to false if you're not using HTTPS in development
       sameSite: 'Lax',  // or 'Strict' depending on your use case
@@ -35,5 +35,6 @@ const initSession = (app, mongoUrl) => {
     next();
   });
 };
+
 
 module.exports = { initSession }
