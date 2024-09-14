@@ -18,19 +18,20 @@ function initSocket(httpServer, sessionMiddleware) {
     });
 
     // Usar el middleware de sesión de express con Socket.io
-    io.use(sharedSession(sessionMiddleware, {
-        autoSave: true
-    }));
+    io.use((socket, next) => {
+        sessionMiddleware(socket.request, {}, next);
+    });
 
     io.on('connection', async (socket) => {
-        const session = socket.handshake.session;
-        
+        const session = socket.request.session;
+
         if (!session || !session.passport || !session.passport.user) {
             console.error('No session or user found');
             return;
         }
 
         const userId = session.passport.user;
+        console.log('User connected with ID:', userId);
 
         try {
             // Buscar el usuario actual
