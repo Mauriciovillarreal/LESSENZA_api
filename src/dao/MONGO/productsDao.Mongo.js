@@ -9,6 +9,10 @@ class ProductsDaoMongo {
         return await this.model.find()
     }
 
+    getPaginated = async (options) => {
+        return await this.ProductModel.paginate({}, options);
+    };
+
     async get(pid) {
         return await this.model.findById(pid)
     }

@@ -11,12 +11,29 @@ class ProductController {
 
     getProducts = async (req, res, next) => {
         try {
-            const products = await this.productsService.getProducts()
-            res.send(products)
+            const { page = 1, limit = 8 } = req.query; // Página y límite por defecto
+            const options = {
+                page: parseInt(page),
+                limit: parseInt(limit),
+            };
+    
+            // Obtener productos con paginación
+            const products = await this.productsService.getPaginatedProducts(options);
+            
+            res.send({
+                status: 'success',
+                data: products.docs, // Los productos de la página
+                totalDocs: products.totalDocs, // Total de productos
+                totalPages: products.totalPages, // Total de páginas
+                currentPage: products.page, // Página actual
+                hasPrevPage: products.hasPrevPage,
+                hasNextPage: products.hasNextPage,
+            });
         } catch (error) {
-            next(error)
+            next(error);
         }
     }
+    
 
     getProduct = async (req, res, next) => {
         const { pid } = req.params
