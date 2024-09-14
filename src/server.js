@@ -33,4 +33,4 @@ app.use(addLogger)
 app.use(routerApp)
 app.use(errorHandler())
 
-initSocket(httpServer)
+initSocket(httpServer, sessionMiddleware);
