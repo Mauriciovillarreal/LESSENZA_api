@@ -4,7 +4,6 @@ class ProductsRepository {
     }
 
     getProducts = async () => await this.ProductDao.getAll()
-    getPaginatedProducts = async (options) => await this.ProductDao.getPaginated(options);
     getProduct = async pid => await this.ProductDao.get(pid)
     createProduct = async newProduct => await this.ProductDao.create(newProduct)
     updateProduct = async (pid, updateProduct) => await this.ProductDao.update(pid, updateProduct, { new: true })
