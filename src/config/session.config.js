@@ -21,7 +21,6 @@ const initSession = (app, mongoUrl) => {
     saveUninitialized: false,
     cookie: { 
       secure: false,
-      sameSite: 'lax' 
     } 
   }));
 
