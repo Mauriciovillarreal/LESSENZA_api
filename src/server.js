@@ -26,7 +26,7 @@ app.use(cors({
   credentials: true, 
 }));
 
-initSession(app, mongo_url)
+const sessionMiddleware = initSession(app, mongo_url);
 
 app.use(addLogger)
 
