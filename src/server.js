@@ -22,7 +22,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser(cookie_parser_secret))
 app.use(cors({
-  origin: 'https://lessenza.onrender.com',
+  origin: ['https://lessenza.onrender.com', 'http://localhost:5173'],
   credentials: true,
 }));
 
