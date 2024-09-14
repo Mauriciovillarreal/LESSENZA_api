@@ -7,7 +7,7 @@ const { objetConfig } = require('../config/index.js')
 const { session_secret } = objetConfig
 
 const initSession = (app, mongoUrl) => {
-  const sessionMiddleware = (session({
+  app.use(session({
     store: MongoStore.create({
       mongoUrl,
       mongoOptions: {
@@ -18,7 +18,7 @@ const initSession = (app, mongoUrl) => {
     }),
     secret: session_secret,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: { 
       secure: false,
       sameSite: 'lax' 
@@ -27,7 +27,6 @@ const initSession = (app, mongoUrl) => {
 
   initPassport();
 
-  app.use(sessionMiddleware);
   app.use(passport.initialize());
   app.use(passport.session());
 
@@ -36,7 +35,6 @@ const initSession = (app, mongoUrl) => {
     next();
   });
   
-  return sessionMiddleware;
 };
 
 

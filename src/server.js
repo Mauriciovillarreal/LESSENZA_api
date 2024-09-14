@@ -26,11 +26,11 @@ app.use(cors({
   credentials: true, 
 }));
 
-const sessionMiddleware = initSession(app, mongo_url);
+initSession(app, mongo_url)
 
 app.use(addLogger)
 
 app.use(routerApp)
 app.use(errorHandler())
 
-initSocket(httpServer, sessionMiddleware);
+initSocket(httpServer)
